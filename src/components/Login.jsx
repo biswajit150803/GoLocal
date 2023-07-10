@@ -58,7 +58,7 @@ const Login = ({ setShowLogin, setCurrentUsername,myStorage }) => {
           <div className="form-login">
             <div className="form-heading">
             <h1>Welcome Back,Login!</h1>
-              <p>We are glad you are back...</p>
+              <p >We are glad you are back...</p>
             </div>
             <form className="login-form">
               <div className="login-form-input">

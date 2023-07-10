@@ -95,18 +95,18 @@ function Map(props) {
       console.log(err);
     }
   };
-  const getPins = async () => {
-    try {
-      const allPins = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/pins"
-      );
-      setPins(allPins.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
   useEffect(() => {
-   
+    const getPins = async () => {
+      try {
+        const allPins = await axios.get(
+          "https://hawkerhut-back.onrender.com/api/pins"
+        );
+        setPins(allPins.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     getPins();
   });
 
@@ -124,57 +124,48 @@ function Map(props) {
   const [productList, setProductList] = useState([]);
   const [checked, setChecked] = useState(localStorage.getItem("Checked"));
   const [items, setItems] = useState([]);
-  const getPins2 = async () => {
-    try {
-      const allPins = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/pins"
-      );
-      console.log(allPins.data);
-
-      for (let i = 0; i < allPins.data.length; i++) {
-        // productList.push(allPins.data[i].title);
-        setProductList((prev) => {
-          return [...prev, allPins.data[i].title];
-        });
-        // setProducts((prev) => {
-        //   return [...prev, allPins.data[i].title];
-        // });
-      }
-      console.log(productList);
-
-      setPins(() => {
-        const newl = allPins.data;
-        return newl;
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const getItems = async () => {
-    try {
-      const allItems = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/items"
-      );
-      console.log(allItems.data[0].item);
-      console.log(allItems.data[0].username);
-      setItems(allItems.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   useEffect(() => {
-    
-    getPins2();
+    const getPins = async () => {
+      try {
+        const allPins = await axios.get(
+          "https://hawkerhut-back.onrender.com/api/pins"
+        );
+        console.log(allPins.data);
+
+        for (let i = 0; i < allPins.data.length; i++) {
+          // productList.push(allPins.data[i].title);
+          setProductList((prev) => {
+            return [...prev, allPins.data[i].title];
+          });
+          setProducts((prev) => {
+            return [...prev, allPins.data[i].title];
+          });
+        }
+        console.log(productList);
+
+        setPins(() => {
+          const newl = allPins.data;
+          return newl;
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const getItems = async () => {
+      try {
+        const allItems = await axios.get(
+          "https://hawkerhut-back.onrender.com/api/items"
+        );
+        console.log(allItems.data[0].item);
+        console.log(allItems.data[0].username);
+        setItems(allItems.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getPins();
     getItems();
   }, [checked]);
-  function inter(){
-    setTimeout(()=>{
-      setReset(reset+1);
-    },5000);
-  }
-  useEffect(()=>{
-    inter();
-  })
 
   // console.log(productList);
   const [searchVal, setSearchVal] = useState("");
@@ -369,9 +360,8 @@ function Map(props) {
   /////////////////////////ADD CIRCLE CONDITION///////////////////////
   const [sideBox, setSideBox] = useState([]);
   useEffect(() => {
-    getPins();
+    
     if (pins) {
-      getPins();
       let arr = [];
       for (let i = 0; i < pins.length; i++) {
         if (
@@ -387,7 +377,6 @@ function Map(props) {
           console.log(pins[i]);
         }
       }
-
       setSideBox(arr);
     }
   },[reset]);

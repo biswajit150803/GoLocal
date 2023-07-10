@@ -129,7 +129,7 @@ const HomePage = () => {
                   <Categories />
                   <div className="customervideo">
                     <Video
-                      url="https://youtu.be/fd1Q9T8ZzzE"
+                      url="https://www.youtube.com/watch?v=LapOdjjjJgQ"
                       text="Want to know on how to use our platform?"
                     />
                   </div>

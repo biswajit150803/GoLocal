@@ -56,9 +56,9 @@
   color: slateblue;
   border: 3px solid slateblue;
   cursor: pointer;
-  margin-top: 4vh;
+  /* margin-top: 4vh;
   border-radius: 5px;
-  margin-bottom: 3vh;
+  margin-bottom: 3vh; */
 }
 
 .success {

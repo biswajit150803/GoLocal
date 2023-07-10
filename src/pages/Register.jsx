@@ -114,7 +114,7 @@ export default function Register({ setShowRegister,username,email,password,headi
             
           </div>
           <p id="uidnote" className="instructions" style={{color:"orange",fontSize:"12px"}}>
-            *Must Insert Image. in jpg format preferably.
+            *Must Insert Image. in jpg/.png format preferably.
           </p>
         </div>
         <button className="registerBtn" onClick={handleSubmit}>

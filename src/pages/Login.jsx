@@ -17,13 +17,18 @@ export default function Login({ setShowLogin,setBlocked,setUrl, setCurrentUserna
         "https://hawkerhut-back.onrender.com/api/users/login",
         user
       );
-      setCurrentUsername(res.data.username);
-      setBlocked(res.data.blocked);
-      setUrl(res.data.url);
-      myStorage.setItem("user", res.data.username);
-      myStorage.setItem("blocked", res.data.blocked);
-      myStorage.setItem("url", res.data.url);
-      setShowLogin();
+      if(!res.data.blocked){
+        setCurrentUsername(res.data.username);
+        setBlocked(res.data.blocked);
+        setUrl(res.data.url);
+        myStorage.setItem("user", res.data.username);
+        myStorage.setItem("blocked", res.data.blocked);
+        myStorage.setItem("url", res.data.url);
+        setShowLogin();
+      }
+      else{
+        setError(true);
+      }
     } catch (err) {
       setError(true);
     }
@@ -31,7 +36,7 @@ export default function Login({ setShowLogin,setBlocked,setUrl, setCurrentUserna
 
   return (
     <div className="loginContainer">
-    <h1>{heading}</h1>
+    <h6 className="lasttop" style={{color:"white"}}>{heading}</h6>
       <div className="formHawker1">
       <label style={{border:"none",color:"white"}}>{userName}</label>
         <input autoFocus placeholder="username" ref={usernameRef} />

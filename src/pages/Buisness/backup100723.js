@@ -741,9 +741,12 @@ function Buisness() {
                 </>
             </div>
           </div>
+          <div className="beforeGS" data-aos="fade-up">
+            {t("beforeGS")}
+          </div>
           <div id="gets">
             {/* <GetStarted lang={lang} data-aos="fade-up" /> */}
-            <Video url="https://www.youtube.com/watch?v=LapOdjjjJgQ" text={t("n20")} />
+            <Video url="https://youtu.be/fd1Q9T8ZzzE" text={t("n20")} />
           </div>
         </>
       ) : tab === 1 ? (
