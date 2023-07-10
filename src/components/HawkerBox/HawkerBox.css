@@ -1,0 +1,46 @@
+.hawkerbox{
+    width: 25vw;
+    display:flex;
+    padding: 5px;
+    /* height: 60vh; */
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #fff;
+    /* overflow-y: scroll; */
+    
+}
+.topbox1{
+    display:flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+    .hawkerbox{
+        width: 80vw;
+        padding: 10px;
+        /* margin-right: 5vw; */
+    }
+}
+@media (min-width:850px){
+    .hawkerbox{
+        padding-left: 3.5vw;
+        padding-right: 3.5vw;
+        padding-top: 2vh;
+    }
+}
+
+.hawkerbox_btn{
+    background-color: rgb(85, 224, 85);
+    color: white;
+    border: none;
+    width: 260px;
+    border-radius: 3px;
+    height: 38px;
+    cursor : pointer;
+}
+.hawkerbox_btn:hover{
+    background-color: white;
+    color: rgb(85, 224, 85);
+    border: 2px solid rgb(85, 224, 85);
+}
+

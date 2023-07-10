@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+.admin{
+    background-color: rgb(44, 8, 88);
+    min-height: 100vh;
+    padding: 5vh 5vw;
+    margin-top: 15vh;
+}
+Tr,Td,Tbody,Thead,Table{
+    color: white;   
+    border: 1px solid white;
+}
+@media(max-width: 40em)
+{
+.responsiveTable tbody tr {
+    border: 1px solid white !important;
+    padding: 0.25em;
+}
+}
+.react-date-picker {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: white;
+}

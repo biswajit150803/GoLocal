@@ -1,0 +1,105 @@
+.col-lg-4{
+
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  margin-left: 5rem;
+  width: 20vw;
+  border:none;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight:500;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 3rem;
+  min-height: 37.5vh;
+  min-width: 37.5vh;
+  box-shadow: 1px 1px 20px #888888;
+}
+
+.col-lg-4:hover{
+  background-color: rgb(119, 117, 117);
+background-blend-mode: multiply;
+color:whitesmoke;
+}
+
+.row{
+  margin: 0;
+  width: 100vw !important;
+  padding: 0 !important;
+  /* height: 70rem; */
+  display: flex;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+
+.container-fluid{
+  padding: 0;
+  height:auto;
+}
+.col1{
+  background:url('../../../public/images/icecream.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.col2{
+  background:url('../../../public/images/Vegetables.png');
+  background-size: cover;
+  cursor: pointer;
+}
+.col3{
+  background:url('../../../public/images/paniPuri.png');
+  background-size: cover;
+  cursor: pointer;
+}
+.col4{
+  background:url('../../../public/images/streetfood.png');
+  background-size: cover;
+  cursor: pointer;
+}
+.col5{
+  background:url('../../../public/images/bakery.png');
+  background-size: cover;
+  cursor: pointer;
+}
+.col6{
+  background:url('../../../public/images/cold_drinks.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+.col7{
+  background:url('../../../public/images/fish.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+.col8{
+  background:url('../../../public/images/cobbler.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+.col9{
+  background:url('../../../public/images/electronics.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .col-lg-4{
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 10rem;
+    margin: 5% 5%;
+  }
+  .row{
+    width: 100%; 
+    padding: 0 5%;
+  }
+}
+
+.Faqq{
+  color:"#dedbd7" !important;
+  text-shadow: none!important;
+}

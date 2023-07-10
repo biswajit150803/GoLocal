@@ -1,0 +1,109 @@
+.registerContainer {
+  width: 350px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 10px auto ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: #20262E;
+  /* max-width: 350px;
+  max-height: 350px; */
+  overflow: hidden;
+}
+.reginn{
+  height: 450px;
+  padding: 5px;
+}
+.registerCancel {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: slateblue;
+  font-weight: 700;
+}
+
+.registerBtn {
+  border: none;
+  padding: 5px;
+  background-color: slateblue;
+  color: white;
+  cursor: pointer;
+  margin-top: 0.5vh;
+  border-radius: 5px;
+}
+
+
+.registerBtn:hover {
+  border: none;
+  padding: 5px;
+  background-color: white;
+  color: slateblue;
+  border: 3px solid slateblue;
+  cursor: pointer;
+  margin-top: 4vh;
+  border-radius: 5px;
+  margin-bottom: 3vh;
+}
+
+.success {
+  font-size: 12px;
+  color: green;
+  text-align: center;
+}
+
+.failure {
+  font-size: 12px;
+  color: red;
+  text-align: center;
+}
+
+.formHawker {
+  width: 20vw;
+  /* height: 35vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(88, 87, 87);
+}
+/* .reg{
+  height: 30vh;
+} */
+@media(max-width:850px){
+  .formHawker{
+    width: 70vw !important;
+    height: 48vh !important;
+    padding-left: 0px !important;
+  }
+  .registerContainer{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 3px;
+  }
+  .reginn{
+    width: 300px;
+  }
+  input[type="file"]{
+    min-height: 6vh !important;
+  }
+}
+
+input[type="file"]
+{
+  color: white;
+}

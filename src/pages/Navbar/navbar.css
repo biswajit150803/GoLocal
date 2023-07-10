@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Sevillana&family=Moon+Dance&family=McLaren&family=Montserrat&family=Oswald:wght@300&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #20262E;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.logoo
+{
+  color:rgb(185, 119, 13);
+  font-family: Moon Dance;
+  text-shadow: 1px 1px purple;
+  font-size: 42px;
+  margin-top: 5vh;
+  background-color: #f8f4ea;
+  /* background-image: url("https://www.transparenttextures.com/patterns/debut-light.png"); */
+}
+.logN{
+  height: 15vh;
+  margin-top:4vh;
+}
+.navbar1 {
+  height: 15.71951219512195vh;
+  background-color: #f8f4ea;
+  /* background-image: url("https://www.transparenttextures.com/patterns/debut-light.png"); */
+  position: relative;
+  z-index: 2;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+
+.menu-icon {
+  display: none;
+  color:#000000;
+  width: 15vh;
+}
+.nav-sticky{
+  position: sticky;
+}
+
+.nav-elements1 ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  color:#93BFCF;
+  padding-left: 5vh;
+}
+
+.nav-elements1 ul li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav-elements1 ul a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #93BFCF;
+  text-decoration: none;
+}
+.hov:hover{
+  color:#950101;
+}
+.nav-elements1 ul a.active {
+  color: #3e3e3e;
+  font-weight: 500;
+  position: relative;
+}
+
+a:hover{
+  color:#1dbea6 !important;
+}
+.nav-elements1 ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #c55b1d;
+}
+
+@media (max-width: 1000px) {
+  .nav-elements1{
+    margin-top: 8vw;
+  }
+  .nav-elements1 ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+  .navbar1 {
+    background-color: #f8f4ea !important;
+    position: relative;
+    z-index: 1;
+  }
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 !important;
+    margin-right: -12vw;
+    font-size: 4vw;
+  }
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 !important;
+    margin-right: -12vw;
+  }
+  .navbar1 {
+    height: 90px;
+    background-color: #20262E;
+    position: relative;
+  }
+
+  .nav-elements1 {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #20262E;
+    /* background-image: url("https://www.transparenttextures.com/patterns/debut-light.png"); */
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements1.active {
+    width: 270px;
+  }
+
+  .nav-elements1 ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-elements1 ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}

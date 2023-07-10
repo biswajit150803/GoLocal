@@ -1,0 +1,134 @@
+*{
+  font-family: 'Poppins', sans-serif;
+  /* color: rgb(249, 249, 249); */
+  
+}
+
+a{
+  text-decoration: none;
+  color: rgb(249, 249, 249);
+  font-weight: lighter;
+}
+.Footer{
+  
+  background-color: #000308;
+}
+
+.footer-elements{
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-box{
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  padding-top: 5vh;
+ 
+}
+
+
+.about-section{
+  padding-top: 2%;
+ padding-right: 30px;
+  
+  
+}
+.about{
+  font-weight: bolder;
+  font-size: large;
+  color:azure !important;
+  text-decoration: underline;
+  text-decoration-color: orange;
+  
+}
+.about-content{
+  padding-top: 2vh;
+  padding-bottom: 2%;
+  font-weight: lighter;
+  font-size: small;
+  font-weight: lighter;
+  color: rgb(230, 230, 230);
+  
+  
+}
+
+.for-hawkers{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.social-links{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.copyright{
+  padding-top: 4%;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content:center;
+  padding-right: 4%;
+  padding-left: 4%;
+}
+.contactDetails{
+  padding-top: 1%;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content:center;
+  padding-right: 4%;
+  padding-left: 4%;
+  color: rgb(230, 230, 230);
+  font-weight: lighter;
+  font-size: small;
+  
+}
+.copyright-text{
+  font-size: small;
+  font-weight: lighter;
+  color: rgb(230, 230, 230);
+  
+}
+
+.logo{
+  height: 150px;
+  padding-top: 20px;
+
+}
+
+.logo-element{
+  padding-right: 5%;
+  padding-left: 5%;
+}
+@media (max-width:800px){
+  .text-box{
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+  .social-links{
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .for-hawkers{
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-section{
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0!important;
+  }
+  .Footer{
+    margin-top: 25vh;
+  }
+}

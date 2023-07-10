@@ -1,0 +1,90 @@
+.faq-container {
+    /* background:linear-gradient(to top,#20262e , #579bb1,#32435b ); */
+    background-color: #20262e;
+    height: 90vh;
+}
+
+.faq {
+    color: rgb(233, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    font-size: 8vh;
+    font-weight: 700;
+}
+.accordion-header{
+    background-color: #eaeaea;
+    color: #212529;
+    font-size: 2vh;
+    font-weight: 700;
+    /* padding: 1vh; */
+    border-radius: 5px;
+    margin-bottom: 1vh;
+    cursor: pointer;
+}
+.faq-tab-container {
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+}
+
+.faq-left,
+.faq-right {
+    margin: 10vh;
+}
+
+.acc {
+    width: 40vw;
+    background-color: #eaeaea;
+}
+
+@media (max-width:850px) {
+    .faq {
+        font-size: 3vh;
+        padding-bottom: 25vh;
+    }
+
+    .faq-tab-container {
+        flex-direction: column;
+    }
+
+    .faq-tab-container {
+        align-items: center;
+    }
+
+    .faq-left,
+    .faq-right {
+        margin: 0vh;
+    }
+
+    .acc {
+        width: 70vw;
+    }
+
+
+}
+
+.accordian {
+    --bs-accordion-color: #212529;
+    --bs-accordion-bg: #c5c0c0;
+}
+
+
+.accordion {
+    background-color: #20262e !important;
+    --bs-accordion-color: #20262E !important;
+    color:white !important;
+    --bs-accordion-bg: #c5c0c0;
+}
+.accordion-body{
+    color:white !important;
+    background-color: #20262e !important;
+}
+.accordion-item{
+    border:0 !important;
+}
+.accordion-button:not(.collapsed) {
+        color: #545454 !important;
+    background-color: #e8edf5 !important;
+}

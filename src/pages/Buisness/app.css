@@ -1,0 +1,242 @@
+.loginn{
+  width: 300px;
+  height: 200px;
+}
+.parentcon {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: space-around;
+}
+
+.mapdiv {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 5vw;
+}
+
+label {
+  width: max-content;
+  color: tomato;
+  font-size: 13px;
+  border-bottom: 0.5px solid tomato;
+  margin: 3px 0;
+}
+
+.desc {
+  font-size: 14px;
+}
+
+.star {
+  color: gold;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+}
+.labelb{
+  border-bottom: 0!important;
+  color: #818181;
+  font-size: medium;
+}
+
+.busi_forms {
+  margin-top: 4vh;
+  padding: 2vh 1.5vw;
+  width: 26vw;
+  height:55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  color: rgb(181, 28, 28);
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+input {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 12px;
+  /* color: rgb(185, 184, 184); */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.submitButton {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: tomato;
+  cursor: pointer;
+}
+
+.buttons,
+.logout {
+  /* position: absolute; */
+  top: 10px;
+  right: 10px;
+}
+
+.button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.logout {
+  background-color: tomato;
+}
+
+.login {
+  background-color: teal;
+  margin-right: 10px;
+}
+
+.register {
+  background-color: slateblue;
+}
+
+.writeuph {
+  padding-bottom: 3.5vh;
+}
+
+.btn_start {
+  /* background-color: rgb(5, 219, 5); */
+  padding: 8px;
+  border-radius: 5px;
+  color: azure;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 2vh;
+  cursor: pointer;
+}
+
+.submit{
+  background-color: #47aaf2;
+  margin-top: 3vh;
+  padding: -5px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* transform: translateY(-3.5px); */
+}
+
+.submit:hover {
+  background-color: white;
+  color: #47aaf2;
+  cursor: pointer;
+  border: 2px solid #47aaf2;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+
+
+.busi_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.writeup{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10vh;
+  justify-content: center;
+}
+
+@media (max-width:600px) {
+  .parentcon {
+    flex-direction: column-reverse;
+  }
+  .mapdiv{
+    height: 60vh !important;
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+    width: 80vw !important;
+  }
+  .writeup{
+    margin: 5vh;
+  }
+  .writeuph{
+    margin-left: 8vw !important;
+  }
+  .mapwidth{
+    width: 90vw !important;
+  }
+  .busi_forms{
+    width: 80vw !important;
+    height: 60vh !important;
+  }
+}
+
+.writeup {
+  padding-left: 5vw;
+} 
+
+.beforeGS{
+  font-size: 4vw;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  color:aliceblue;
+  padding-top: 5vh;
+}
+
+.mapboxgl-popup{
+  z-index: 10 !important;
+}
+.loginn{
+  background-color:#20262E;
+}
+Modal{
+  background-color: #20262E;
+}
+.react-responsive-modal-modal{
+  background-color: #20262E;
+}
+.mod-top{
+  color:white;
+}
+
+.reginn{
+  height: 350px;
+  width: 350px;
+}
+
+.react-switch-bg{
+  height: 15px !important;
+  width:36px !important;
+
+}
+.react-switch-handle{
+  height: 12px !important;
+  width: 12px !important;
+}
+.react-switch-bg >div> svg{
+  visibility: hidden;
+}

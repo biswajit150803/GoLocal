@@ -1,0 +1,182 @@
+.signupOutDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./back-login.jpg");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+    background-size: cover;
+    height: 86vh;
+    
+}
+@media(max-width:850px)
+{
+    .signupOutDiv{
+        flex-direction: column;
+        height: 100vh;
+        padding-bottom:15vh;
+    }
+}
+.signup-input{
+    color:#f8f4ea;
+    background-color: grey;
+}
+.signup-section{
+    padding: 2vh 2vw;
+    height: 74vh;
+    width: 35vw;
+    margin-top: 1.8vh;
+    border-radius: 46px;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+}
+
+.form-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.558);
+    padding-top: 2vh;
+}
+.signup-form-input{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+}
+.signup-label{
+    font-size: 2.8vh;
+    margin-bottom: 1.5vh;
+    color: #3e3e3e;
+}
+.signup-input{
+    min-width: 25vw;
+    height:4.5vh;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 2vh;
+}
+
+.signup-btn{
+    padding: 3px;
+    background-color:#24a981;
+    color: #fff;
+    border: none;
+    margin-top: 3vh;  
+    margin-bottom: 2vh;
+    
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+.signup-btn:hover{
+    background-color: #fff;
+    color: #1a365d;
+    border: 1px solid #1a365d;
+}
+.topform123{
+   color: #3e3e3e;
+}
+@media (max-width:500px){
+    .signup-btn{
+       width: max-content;
+       padding:1vh 2vw;
+       border-radius: 3px;
+    }
+    .signupOutDiv{
+        height: 100vh;
+    }
+.signup-section {
+    width: 90vw;
+    height: 70vh;
+}
+    .signup-btn{
+        margin-top: -1vh;
+        margin-bottom: 1vh;
+    }
+}
+
+
+
+
+
+
+/* .signupOutDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://res.cloudinary.com/dcyfkgtgv/image/upload/v1678477127/login1_ob9zma.png");
+    height: 86vh;
+    background-size: cover;
+}
+.signup-section{
+    padding: 2vh 2vw;
+    height: 74vh;
+    width: 35vw;
+    margin-top: 1.8vh;
+    background-color: rgba(11, 78, 62, 0.456);  
+    backdrop-filter: blur(30px);
+}
+
+.form-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.558);
+    padding-top: 2vh;
+}
+.signup-form-input{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+}
+.signup-label{
+    font-size: 2.8vh;
+    margin-bottom: 1.5vh;
+    color: #fff;
+}
+.signup-input{
+    min-width: 25vw;
+    height:4.5vh;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 2vh;
+}
+
+.signup-btn{
+    padding: 3px;
+    background-color:#1a365d;
+    color: #fff;
+    border: none;
+    margin-top: 3vh;  
+    margin-bottom: 2vh;
+    
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+.signup-btn:hover{
+    background-color: #fff;
+    color: #1a365d;
+    border: 1px solid #1a365d;
+}
+.topform123{
+   color: #fff;
+}
+@media (max-width:500px){
+    .signup-btn{
+       width: max-content;
+       padding:1vh 2vw;
+       border-radius: 3px;
+    }
+    .signupOutDiv{
+        height: 100vh;
+    }
+.signup-section {
+    width: 90vw;
+    height: 70vh;
+}
+    .signup-btn{
+        margin-top: -1vh;
+        margin-bottom: 1vh;
+    }
+} */

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.kolo1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+  }
+  
+.polo1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+
+.mcard1
+{  
+    top: 80px;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    backdrop-filter: blur(5rem);    
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);    
+    border-top-color: rgba(225, 225, 225, 0.5);
+    border-left-color: rgba(225, 225, 225, 0.5);
+    border-bottom-color: rgba(225, 225, 225, 0.1);
+    border-right-color: rgba(225, 225, 225, 0.1);
+}
+.bgm1{
+    width:100vw;
+    height:100vh;
+    background-image: url("https://source.unsplash.com/1600x900/?admin");
+    background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  overflow:hidden;
+}
+.Appo21{
+    width:40vw;
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form_containerAd1 {
+    font-family: Poppins;
+    display: flex;
+    flex-wrap:wrap;
+    width: 40vw;
+    height: 54vh;
+    color:#000000 ;
+    overflow-wrap:inherit;
+    background-color: rgba(234, 225, 225, 0.456);  
+    backdrop-filter: blur(30px);
+    box-shadow: 3px 4px 36px -6px rgba(0,0,0,0.8);
+    border-radius: 50px;
+    text-shadow: 0.3px 0.3px rgb(164, 120, 120);
+    padding-bottom: 5vh;
+    position: relative;
+}
+h1{
+    font-family: Poppins;
+    font-size: large;
+    padding-top: 5vh;
+}
+.buttonAd{
+    width: 10vw;
+    background-color: maroon;
+}
+.containerAd{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnad{
+    background-color: rgb(31, 126, 235);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+@media (max-width: 600px) {
+    .form_containerAd1{
+        width:60vw !important;
+    }
+    .Appo21{
+        width: 60vw !important;
+    }
+}
+@media (max-height: 600px) {
+    .form_containerAd1{
+        height:fit-content !important;
+    }
+    .Appo21{
+        height: fit-content !important;
+    }
+}

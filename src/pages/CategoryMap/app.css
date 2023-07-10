@@ -1,0 +1,311 @@
+.card {
+    width: 5vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .mapwidth{
+    width: 54vw !important;
+  }
+  label {
+    width: max-content;
+    color: tomato;
+    font-size: 13px;
+    border-bottom: 0.5px solid tomato;
+    margin: 3px 0;
+  }
+  
+  .desc {
+    font-size: 14px;
+  }
+  .map_mark{
+    color:📘 !important;
+  }
+  
+  .star {
+    color: gold;
+  }
+  
+  .username {
+    font-size: 14px;
+  }
+  
+  .date {
+    font-size: 12px;
+  }
+  
+  /* form {
+    width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(88, 87, 87);
+  } */
+  
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px;
+    color: rgb(185, 184, 184);
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+  
+  textarea {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  .submitButton {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
+  }
+  
+  .buttons,
+  .logout {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .button:focus{
+    outline: none;
+  }
+  
+  .logout{
+    background-color: tomato;
+  }
+  
+  .login{
+    background-color: teal;
+    margin-right: 10px;
+  }
+  
+  .register{
+    background-color: slateblue;
+  }
+
+  /* @media (max-width:500px){
+    .mcard{
+      position: relative;
+      display: flex;
+      flex-direction: none;
+      width: auto;
+      z-index: 1000000;
+    }
+    .mapwidth{
+      width: 100vw;
+    }
+  } */
+
+
+  /* .card {
+    width: 250px !important;
+    height: 250px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 10000 !important;
+  }
+   */
+  .parentcon {
+    display: flex;
+    overflow-x: hidden;
+    justify-content: space-around;
+  }
+  
+  .mapdiv {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5vw;
+  }
+  
+  label {
+    width: max-content;
+    color: tomato;
+    font-size: 13px;
+    border-bottom: 0.5px solid tomato;
+    margin: 3px 0;
+  }
+  
+  .desc {
+    font-size: 14px;
+  }
+  
+  .star {
+    color: gold;
+  }
+  
+  .username {
+    font-size: 14px;
+  }
+  
+  .date {
+    font-size: 12px;
+  }
+  
+  .busi_form {
+    margin-top: 4vh;
+    padding: 1vh 1vw;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    color: rgb(181, 28, 28);
+    background-color: rgb(99, 96, 96);
+  }
+  
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px;
+    /* color: rgb(185, 184, 184); */
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+  
+  textarea {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  .submitButton {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
+  }
+  
+  .buttons,
+  .logout {
+    /* position: absolute; */
+    top: 10px;
+    right: 10px;
+  }
+  
+  .button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  .logout {
+    background-color: tomato;
+  }
+  
+  .login {
+    background-color: teal;
+    margin-right: 10px;
+  }
+  
+  .register {
+    background-color: slateblue;
+  }
+  
+  .writeuph {
+    padding-bottom: 3.5vh;
+  }
+  
+  .btn_start {
+    /* background-color: rgb(5, 219, 5); */
+    padding: 8px;
+    border-radius: 3px;
+    color: azure;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2vh;
+  }
+  
+  .busi_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .writeup{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vh;
+    justify-content: center;
+  }
+  
+  @media (max-width:600px) {
+    .parentcon {
+      flex-direction: column-reverse;
+    }
+    .mapdiv{
+      height: 60vh !important;
+      margin-left: 5vw !important;
+      margin-right: 5vw !important;
+      width: 80vw !important;
+    }
+    .writeup{
+      margin: 5vh;
+    }
+    .writeuph{
+      margin-left: 8vw !important;
+    }
+    .mapwidth{
+      width: 90vw !important;
+    }
+  }
+  
+  .writeup {
+    padding-left: 5vw;
+  } 
+  
+  .beforeGS{
+    font-size: 4vw;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    color:aliceblue;
+    padding-top: 5vh;
+  }
+
+  .mapboxgl-popup{
+    z-index: 10 !important;
+  }

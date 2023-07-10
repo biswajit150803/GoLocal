@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500&display=swap');
+
+
+
+.main1{
+    background-color: #201F1F;
+    color: white;
+    display: flex;
+    
+}
+
+.button12{
+    width:15vw;
+}
+.left1{
+    width: 50%;
+    font-family: 'Lexend Deca', sans-serif;
+
+}
+
+.right1{
+    width: 50%;
+    box-shadow:  inset -60px -60px 250px #000;
+   
+    height: 100vh;
+
+}
+.labell{
+    color:white !important;
+}
+@media(min-width:850px){
+    .main1{
+        padding-left:5vw;
+        
+
+    }
+}
+
+.form1{
+    padding-top:5vh;
+    display: flex;
+    flex-direction: column;
+}
+.input1{
+    width: 60%;
+    background-color: #343333;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+    margin-top:5px;
+    margin-bottom: 20px;
+    height: 35px;
+}
+.msg1{
+    height: 130px;
+}
+
+.bg-indigo-500{
+    font-weight: 300;
+}
+
+.input1,.msg1{
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+.input1:hover{
+    border: 2px solid #6366f1;
+}
+.input1:focus{
+    border: 2px solid #6366f1 !important;
+}
+.button12{
+    transition: all;
+    transition-duration:0.25s;
+    transition-timing-function: ease-in ease-out;
+}
+.button12:hover{
+    background-color: transparent;
+}
+
+.sent1{
+    display: flex;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 16vw;
+    height: 5.5vw;
+    border-radius: 10px;
+    background-color: #333232;
+    border: 3px solid #6366f1;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    animation-name: animationpromax;
+    animation-delay: 5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.text1{
+    width: 70%;
+    text-align: left;
+    
+}
+
+.sticker1{
+    scale: 1.3;
+
+}
+
+@keyframes animationpromax {
+    to{
+        
+        opacity: 0;
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media (max-width: 900px){
+    .button12{
+        width:auto !important;
+        margin-bottom: 5vh;
+    }
+    .main{
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    }
+    .right1{
+        display: none;
+    }
+    .left1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        font-size: 16px;
+    }
+    .form1{
+        margin: 0;
+        padding: 0;
+        width: 80%;
+    }
+    .input1{
+        width: 100%;
+    }
+    .h44{
+        padding: 20px 20px 40px !important;
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    .h11{
+        text-align: center; 
+        margin-left: 0 !important;
+        padding: 0 20px;
+
+    }
+    .button12{
+       align-self: center;
+
+    }
+    .labell{
+        color: white !important;
+    }
+    .sent1{
+        position: absolute;
+        top: 60px;
+        width: 80%;
+        height: 12%;
+        font-size: 13px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 12px black;
+    }
+
+}
+.work11{
+    background: url("../../../public/work.jpg");
+    background-size: cover !important;
+}
+.prob11{
+    background: url("../../../public/problem.jpg");
+    background-size: cover !important;
+    background-position: center !important;
+}
+.contact11{
+    background: url("../../../public/Cover.jpg");
+    
+    background-position: center !important;
+    background-size: 100% !important;
+}

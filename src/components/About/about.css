@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500&display=swap');
+
+
+
+.main22{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    color: black;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+}
+
+.aboutcontent22{
+    display: flex;
+    flex-direction: row;
+}
+
+.left_content22{
+    width:auto;
+}
+
+.right_content22{
+    background: url("./Logo.png");
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-size: cover;
+    background-position-y: -30px;
+    background-repeat: no-repeat;
+}
+
+.membercard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+    color: rgb(41, 41, 41);
+    box-shadow: 0px 0 20px lightblue;
+    transition: all 1s ease-in ease-out;
+
+}
+.membercard > img {
+    width: 65%;
+    margin-top: 14%;
+    border:5px solid white;
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px lightgray;
+}
+.membercard > img:hover{
+    border-color: lightblue;
+}
+.membercard > h4 {
+    padding-top: 20px;
+    color: black1;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 700;
+}
+.links{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    margin:auto 0;
+    color:#000308 !important;
+}
+.bi{
+    color:#000308;
+}
+.bi:hover{
+    color: #6366f1;
+}
+.membercard:hover{
+    translate:  0 -5px;
+    box-shadow: 0 0 50px lightblue;
+}
+.list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.h15{
+    font-weight: 500;
+}
+
+.members{
+    padding-bottom: 7vh;
+}
+
+
+@media (max-width: 900px){
+    .h15{
+        text-align: center !important;
+        margin: 220px 0 0 !important !important;
+    }
+
+    .right_content22{
+        position: absolute;
+        top: 20px;
+        transform: translateX(30%);
+        background-size: 200px 200px;
+        background-position: center;
+    }
+
+    .aboutcontent22{
+        padding: 20px 45px 0 !important;
+        
+    }
+    .pr-20{
+        padding-right: 0 !important;
+    }
+    .ml24{
+        margin-left: 0 !important;
+    }
+    .left_content22{
+        padding: 0;
+        text-align: center !important;
+        font-size: 18px !important;
+        width:90vw !important;
+    }
+
+    .members{
+        /* margin-top: -150px !important; */
+        padding: 0 20px 64px !important;
+    }
+    .ml-24{
+        margin-left: 0 !important;
+    }
+    .text-5xl{
+        text-align: center !important;
+    }
+}
+.text-5xl {
+    font-size: 3rem/* 48px */;
+    line-height: 1;
+}
+.pt-4 {
+    padding-top: 1rem/* 16px */;
+}
+.mt-24 {
+    margin-top: 6rem/* 96px */;
+}
+.ml-24 {
+    margin-left: 6rem/* 96px */;
+}
+.px-24 {
+    padding-left: 6rem/* 96px */;
+    padding-right: 6rem/* 96px */;
+}
+.py-8 {
+    padding-top: 2rem/* 32px */;
+    padding-bottom: 2rem/* 32px */;
+}
+.text-xl {
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
+.text-justify {
+    text-align: justify;
+}
+.pr-20 {
+    padding-right: 5rem/* 80px */;
+}
+.pt-4 {
+    padding-top: 1rem/* 16px */;
+}
+.mt-8 {
+    margin-top: 2rem/* 32px */;
+}
+.ml-24 {
+    margin-left: 6rem/* 96px */;
+}
+.pt-16 {
+    padding-top: 4rem/* 64px */;
+}
+.text-2xl {
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+}
+bi-linkedin,bi-instagram,bi-github,bi-twitter{
+    color: #000308 !important;
+}

@@ -1,0 +1,14 @@
+td{
+  color:white;
+}
+th{
+  color:white;
+}
+.loading{
+  height:100vh;
+  width:100vw;
+  background-color: black !important;
+}
+.loadingimg{
+  width:50vw;
+}

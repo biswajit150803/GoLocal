@@ -1,0 +1,76 @@
+.loginContainer {
+  width: 300px;
+  height: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  /* background-color: white; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #20262E; */
+  
+}
+
+.loginn{
+  height: 300px;
+}
+.loginCancel {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: teal;
+  font-weight: 700;
+}
+
+.loginBtn {
+  border: none;
+  padding: 5px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin-top: 4vh;
+  border-radius: 5px;
+}
+
+.loginBtn:hover{
+  background-color: white;
+  color: teal;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.failure {
+  font-size: 12px;
+  color: red;
+  text-align: center;
+}
+
+.formHawker1 {
+  width: 20vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(88, 87, 87);
+}
+@media(max-width:850px){
+  .formHawker1{
+    width: 80vw !important;
+    height: 40vh !important;
+  }
+}
+
