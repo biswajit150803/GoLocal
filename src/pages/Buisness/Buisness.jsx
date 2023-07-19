@@ -63,7 +63,7 @@ function Buisness() {
   // change the language
   const handleChange = (e) => {
     setLang(e.target.value);
-    let loc = "http://localhost:5173/business";
+    let loc = "https://golocal-ktqh.onrender.com/business";
     window.location.replace(loc + "?lng=" + e.target.value);
     myStorage.setItem("Language", e.target.value);
   };
