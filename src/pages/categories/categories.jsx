@@ -9,7 +9,8 @@ const Categories = () => {
   function handleClick(e) {
     myStoragee.setItem("Category", e.target.getAttribute("value"));
     console.log(e.target.getAttribute("value"));
-    window.location.href = "http://localhost:5173/category";
+    // window.location.href = "http://localhost:5173/category";
+    window.location.href = "https://golocal-ktqh.onrender.com/category";
   }
   return (
     <div>
