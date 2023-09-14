@@ -279,6 +279,7 @@ const CPastorders = (props) => {
                   <Th><span style={{lineHeight:"4vh"}}>Hawker Name</span></Th>
                   <Th><span style={{lineHeight:"4vh"}}>Time</span></Th>
                   <Th><span style={{lineHeight:"4vh"}}>Status</span></Th>
+                  <Th><span style={{lineHeight:"4vh"}}>Message</span></Th>
                   <Th><span style={{lineHeight:"4vh"}}>Cost</span></Th>
                 </Tr>
               </Thead>
@@ -289,6 +290,7 @@ const CPastorders = (props) => {
                   <Td><span style={{lineHeight:"4vh"}}>{note.HUser}</span></Td>
                   <Td><span style={{lineHeight:"4vh"}}>{note.updatedAt}</span></Td>
                   <Td><span style={{lineHeight:"4vh"}}>{note.UserStage}</span></Td>
+                  <Td><span style={{lineHeight:"4vh"}}>{(note.RejMessage!=undefined)?<>{note.RejMessage}</>:<>No Message</>}</span></Td>
                   <Td><span style={{lineHeight:"4vh"}}>{note.Amt}</span></Td>
                 </Tr>)
           }
