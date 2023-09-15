@@ -179,11 +179,12 @@ function Map(props) {
   // console.log(productList);
   const [searchVal, setSearchVal] = useState("");
   const [reset, setReset] = useState(0);
-
+  const [load,setload]=useState(true);
   /////////////////search function/////////////////////
   function handleSearch() {
     if (searchVal === "") {
       // setProducts(items);
+      setload(true);
       return;
     }
     const filterBySearch = items.filter((it) => {
@@ -194,7 +195,7 @@ function Map(props) {
     });
     console.log(filterBySearch);
 
-    const filterBySearch2 = sideBox.filter((ppp) => {
+    const filterBySearch2 = sideBox2.filter((ppp) => {
       for (let k = 0; k < filterBySearch.length; k++) {
         if (ppp.username === filterBySearch[k].username) {
           return ppp;
@@ -202,7 +203,9 @@ function Map(props) {
       }
     });
     console.log(filterBySearch2);
+    setload(false);
     setSideBox(filterBySearch2);
+    
   }
   const [tempUser, setTempUser] = useState();
   const openModal = (e, usernamee) => {
@@ -368,6 +371,7 @@ function Map(props) {
 
   /////////////////////////ADD CIRCLE CONDITION///////////////////////
   const [sideBox, setSideBox] = useState([]);
+  const [sideBox2,setSideBox2]=useState([]);
   useEffect(() => {
     getPins();
     if (pins) {
@@ -387,8 +391,11 @@ function Map(props) {
           console.log(pins[i]);
         }
       }
-
-      setSideBox(arr);
+      if(load){
+        setSideBox(arr);
+        
+      }
+      setSideBox2(arr);
     }
   },[reset]);
   React.useEffect(() => {
@@ -695,7 +702,7 @@ function Map(props) {
           </div>
 
           {sideBox.length===0 || sideBox == null ? (
-            <h2 style={{color:"white"}}>Loading Hawkers nearby
+            <h2 style={{color:"white"}}>No Sellers nearby right now
               <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" style={{width:"30px",height:"30px"}} />
             </h2>
           ) : (

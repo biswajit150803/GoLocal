@@ -5,16 +5,22 @@ import Web3 from "web3";
 import Download from "../Download/Download";
 import WrongNetwork from "../WrongNetwork/WrongNetwork";
 import HawkersHut from "../../contracts/HawkerHut.json";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import '../Admin/Admin.css';
+import { set } from "date-fns";
+
+import { RxCross2 } from "react-icons/rx";
+
 const BCurrentorders = (props) => {
    
     const [hawker, setHawker] = React.useState(props.user);
     const [NoteIns, setNoteIns] = React.useState(null);
     const [per, Sper] = React.useState({ lat: 0, long: 0 });
     const {ethereum} = window;
-
+    const rejmsg=React.useRef();
 
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,7 +46,10 @@ const BCurrentorders = (props) => {
        template();
       }, []);
 
-
+      const [open, setOpen] = React.useState(false);
+      const onOpenModal = () => setOpen(true);
+      const onCloseModal = () => setOpen(false);
+ 
 
 
 
@@ -93,7 +102,7 @@ const BCurrentorders = (props) => {
         .then((response) => {
           //console.log(response.data)
           response.data.reverse();
-          setNoteIns2(response.data);
+          // setNoteIns2(response.data);
         })
         .catch((error) => {
           console.error(error);
@@ -141,20 +150,28 @@ const BCurrentorders = (props) => {
           window.location.reload();
       }
     }
-    
-    const hawkerDeny = async (e,id,hash) => {
+    const [b1id,setb1id]=React.useState("");
+    const [b1hash,setb1hash]=React.useState("");
+    const hawkerDenyy = async (e,id,hash) => {
+      setb1id(id);
+      setb1hash(hash);
+      console.log(1)
+      onOpenModal();
+    }
+    const hawkerDeny = async () => {
       const { contract } = state;
       const accountss = await ethereum.request({
         method: 'eth_requestAccounts',
       });
-      const res=await contract.methods.cancelPayment(hash).send({ from: accountss[0] });
+      const res=await contract.methods.cancelPayment(b1hash).send({ from: accountss[0] });
       console.log(res);
       const va=res.events.success.returnValues[2].toString();
       alert(res.events.success.returnValues[0]+"\n Payment to your account: "+Web3.utils.fromWei(va, "ether")+" Eth");
       if(res.events.success.returnValues[1])
       {
         const data={
-          id:id
+          id:b1id,
+          Message:rejmsg.current.value
         };
         console.log(data);
         await axios.post("https://hawkerhut-back.onrender.com/api/web3/hawkerdeny", data);
@@ -170,8 +187,29 @@ const BCurrentorders = (props) => {
     });
   return (
     <div style={{color:"white"}}>
+      <Modal
+        className="mode"
+        open={open}
+        onClose={onCloseModal}
+        closeOnOverlayClick={false}
+        center={true}
+        closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
+      >
+        <div className="moddd">
+          <div className="mod-top">
+            Reason for rejecting the order
+          </div>
+          <br />
+          <br />
+          <input type="text" className="mod-input" ref={rejmsg} />
+          <Button variant="secondary" onClick={hawkerDeny}>
+            Deny
+          </Button>{" "}
+          
+        </div>
+      </Modal>
     {(download)?<>
-        Your orders:
+        Your orders1:
           <br />
           <br />
           {(!state.contract)? <WrongNetwork />:<></>}
@@ -185,7 +223,7 @@ const BCurrentorders = (props) => {
                       <Thead>
                         <Tr>
                           <Th>Customer Name</Th>
-                          <Th>Loc</Th>
+                          <Th>Loc1</Th>
                           <Th>Requirement/message</Th>
                           <Th>Time</Th>
                           <Th>Accept</Th>
@@ -207,7 +245,7 @@ const BCurrentorders = (props) => {
                             <></>
                             }
                           </Td>
-                          <Td style={{color:"white"}}><Button variant="danger" onClick={event =>hawkerDeny(event,note._id,note.Hash)}>Cancel</Button>{' '}</Td>
+                          <Td style={{color:"white"}}><Button variant="danger" onClick={event =>hawkerDenyy(event,note._id,note.Hash)}>Cancel</Button>{' '}</Td>
                         </Tr>
                       </Tbody>
                     </Table>
