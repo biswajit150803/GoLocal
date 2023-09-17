@@ -20,8 +20,11 @@ const BCurrentorders = (props) => {
   const [per, Sper] = React.useState({ lat: 0, long: 0 });
   const { ethereum } = window;
   const rejmsg = React.useRef();
-
+  const [rejmsg1, setrejmsg1] = React.useState("");
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  function msgchange(e){
+    setrejmsg1(e.target.value);
+  }
 
   const [state, setState] = useState({
     web3: null,
@@ -190,7 +193,7 @@ const BCurrentorders = (props) => {
     if (res.events.success.returnValues[1]) {
       const data = {
         id: b1id,
-        Message: rejmsg.current.value,
+        Message: rejmsg1,
       };
       console.log(data);
       await axios.post(
@@ -227,7 +230,7 @@ const BCurrentorders = (props) => {
           <div className="mod-top">Reason for rejecting the order</div>
           <br />
           <br />
-          <input type="text" className="mod-input" ref={rejmsg} />
+          <input type="text" className="mod-input" onChange={msgchange} />
           <Button variant="secondary" onClick={hawkerDeny}>
             Deny
           </Button>{" "}

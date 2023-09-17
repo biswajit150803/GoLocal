@@ -221,6 +221,14 @@ function Map(props) {
   const orderRef = useRef();
   const phoneRef = useRef();
   const amountRef = useRef();
+  const [phonen,setphonen]=useState();
+  const [message,setmessage]=useState();
+  const messageChange = (e) => {
+    setmessage(e.target.value);
+  };
+  const phoneChange = (e) => {
+    setphonen(e.target.value);
+  };
   const mesRef = useRef();
   const { ethereum } = window;
   /////////////////hash for payment////////////////////
@@ -293,44 +301,44 @@ function Map(props) {
     const res = await contract.methods
       .pay(Hash)
       .send({ value: Web3.utils.toWei(vale, "ether"), from: accountss[0] });
-    console.log(res);
-    const va = res.events.success.returnValues[2].toString();
+    console.log(await res);
+    const va = await res.events.success.returnValues[2].toString();
     alert(
       res.events.success.returnValues[0] +
         "\n Payment: " +
         Web3.utils.fromWei(va, "ether") +
         " Eth"
     );
-    if (res.events.success.returnValues[1]) {
+    console.log(await res.events.success.returnValues[1])
+    if (await res.events.success.returnValues[1]) {
       /////////////////if error or denied then cancel order///////////////
       const data = {
         Hash: Hash,
         CUser: props.user,
         HUser: tempUser,
-        CPhone: phoneRef.current.value,
+        CPhone: phonen,
         Lat: per.lat,
         Long: per.long,
-        Message: mesRef.current.value,
+        Message: message,
       };
 
-      if (phoneRef.current.value.length !== 10) {
-        alert("Enter a valid phone no");
-      } else {
+      
         await axios.post(
           "https://hawkerhut-back.onrender.com/api/web3/order",
           data
         );
         console.log(
-          "O: " +
-            orderRef.current.value +
+         
             " P:" +
-            phoneRef.current.value +
+            phonen +
+            " M:" +
+            message +
             " L:" +
             per.lat +
             " L:" +
             per.long
         );
-      }
+        setLoader(false);
     }
   }
   catch(err){
@@ -399,7 +407,7 @@ function Map(props) {
           //    pins[i]]
           // ));
           arr.push(pins[i]);
-          console.log(pins[i]);
+          //console.log(pins[i]);
         }
       }
       if(load){
@@ -463,7 +471,7 @@ function Map(props) {
                       className="requesmes"
                       type="text"
                       placeholder="Enter your requirements or message for the hawker"
-                      ref={mesRef}
+                      onChange={messageChange}
                     />
                   </div>
                   <br />
@@ -474,7 +482,7 @@ function Map(props) {
                       className="requesmes"
                       type="number"
                       placeholder="Enter your phone no"
-                      ref={phoneRef}
+                      onChange={phoneChange}
                     />
                   </div>
                   <br />

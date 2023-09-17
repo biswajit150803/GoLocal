@@ -184,6 +184,7 @@ const Admin = (props) => {
               Reset
             </Button>
           </div>
+          {loader?<div className="loaddd">Loading...</div>:<></>}
           <div>
             {notes === null || notes === undefined || notes.length === 0 ? (
               <>no items currently</>
