@@ -286,8 +286,6 @@ function Map(props) {
       method: "eth_requestAccounts",
     });
     setLoader(true);
-    // (loader)?<div style={{color:"red"}}>Loading...</div>:<> </>;
-    (loader)?alert("Please wait a bit for the metamask to connect"):<> </>;
     try{
     const Hash = hashGenerator();
     console.log(Hash);
@@ -436,7 +434,6 @@ function Map(props) {
 
   return (
     <>
-    {loader?<div style={{color:"red",fontSize:"5vh"}}>Loading...</div>:<></>}
       <Modal
         className="mode"
         open={open}

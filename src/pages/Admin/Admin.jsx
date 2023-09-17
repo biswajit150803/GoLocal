@@ -27,7 +27,7 @@ const Admin = (props) => {
     await axios
       .request(options)
       .then((response) => {
-        //console.log(response.data)
+        console.log(response.data)
         response.data.reverse();
         setNotes(response.data);
         setNotes2(response.data);
