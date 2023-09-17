@@ -25,6 +25,7 @@ const BCurrentorders = (props) => {
   function msgchange(e){
     setrejmsg1(e.target.value);
   }
+
   const [state, setState] = useState({
     web3: null,
     contract: null,

@@ -191,6 +191,9 @@ const CCurrentorders = (props) => {
     const accountss = await ethereum.request({
       method: "eth_requestAccounts",
     });
+    onOpenModal();
+    setLoader(true)
+    try{
     const res = await contract.methods
       .cancelPayment(phash)
       .send({ from: accountss[0] });
@@ -212,6 +215,14 @@ const CCurrentorders = (props) => {
       );
       window.location.reload();
     }
+  }
+  catch(err){
+    console.log(err)
+  }
+  finally{
+    onCloseModal();
+    setLoader(false)
+  }
   };
   const customerAccept = async (e, id, hash) => {
     const { contract } = state;
@@ -219,70 +230,89 @@ const CCurrentorders = (props) => {
     setihash(hash);
     onOpenModal();
   };
+  const [loader, setLoader] = React.useState(false);
   const partialPayment = async () => {
+    onOpenModal();
+    setLoader(true);
     const { contract } = state;
     let Amt;
     const accountss = await ethereum.request({
       method: "eth_requestAccounts",
     });
-    const res = await contract.methods
-      .partialPayment(ihash)
-      .send({ from: accountss[0] });
-    console.log(res);
-    const va = res.events.success.returnValues[2].toString();
-    Amt = Web3.utils.fromWei(va, "ether");
-    alert(
-      res.events.success.returnValues[0] +
-        "\n Payment to your account: " +
-        Web3.utils.fromWei(va, "ether") +
-        " Eth"
-    );
-    if (res.events.success.returnValues[1]) {
-      const data = {
-        id: iid,
-        UserStage: "PCompleted",
-        Amt: parseFloat(Amt),
-      };
-      ////////////WEB3 PARTIAL PAYMENT FUNCTION/////////////////////
-      ////////////////////////////////////////////////////
-      await axios.post(
-        "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
-        data
+    try {
+      const res = await contract.methods
+        .partialPayment(ihash)
+        .send({ from: accountss[0] });
+      console.log(res);
+      const va = res.events.success.returnValues[2].toString();
+      Amt = Web3.utils.fromWei(va, "ether");
+      alert(
+        res.events.success.returnValues[0] +
+          "\n Payment to your account: " +
+          Web3.utils.fromWei(va, "ether") +
+          " Eth"
       );
-      window.location.reload();
+      if (res.events.success.returnValues[1]) {
+        const data = {
+          id: iid,
+          UserStage: "PCompleted",
+          Amt: parseFloat(Amt),
+        };
+        ////////////WEB3 PARTIAL PAYMENT FUNCTION/////////////////////
+        ////////////////////////////////////////////////////
+        await axios.post(
+          "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
+          data
+        );
+        window.location.reload();
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      onCloseModal();
+      setLoader(false);
     }
   };
   const fullPayment = async () => {
+    onOpenModal();
+    setLoader(true);
     const { contract } = state;
     let Amt;
     const accountss = await ethereum.request({
       method: "eth_requestAccounts",
     });
-    const res = await contract.methods
-      .completePayment(ihash)
-      .send({ from: accountss[0] });
-    console.log(res);
-    const va = res.events.success.returnValues[2].toString();
-    Amt = Web3.utils.fromWei(va, "ether");
-    alert(
-      res.events.success.returnValues[0] +
-        "\n Payment transfer to hawker: " +
-        Web3.utils.fromWei(va, "ether") +
-        " Eth"
-    );
-    if (res.events.success.returnValues[1]) {
-      const data = {
-        id: iid,
-        UserStage: "Completed",
-        Amt: parseFloat(Amt),
-      };
-      /////////////////////web3 full payment function//////////////////////
-      ////////////////////////////////////////
-      await axios.post(
-        "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
-        data
+    try {
+      const res = await contract.methods
+        .completePayment(ihash)
+        .send({ from: accountss[0] });
+      console.log(res);
+      const va = res.events.success.returnValues[2].toString();
+      Amt = Web3.utils.fromWei(va, "ether");
+      alert(
+        res.events.success.returnValues[0] +
+          "\n Payment transfer to hawker: " +
+          Web3.utils.fromWei(va, "ether") +
+          " Eth"
       );
-      window.location.reload();
+      if (res.events.success.returnValues[1]) {
+        const data = {
+          id: iid,
+          UserStage: "Completed",
+          Amt: parseFloat(Amt),
+        };
+        /////////////////////web3 full payment function//////////////////////
+        ////////////////////////////////////////
+        await axios.post(
+          "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
+          data
+        );
+        window.location.reload();
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      onCloseModal();
+      setLoader(false);
     }
   };
 
@@ -296,21 +326,34 @@ const CCurrentorders = (props) => {
         center={true}
         closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
-        <div className="moddd">
-          <div className="mod-top">
-            You can choose to pay partially or fully
+        {loader ? (
+          <div style={{ color: "white", fontSize: "5vh" }}>Loading...</div>
+        ) : (
+          <div className="moddd">
+            <div className="mod-top">
+              You can choose to pay partially or fully
+            </div>
+            <br />
+            <br />
+            <Button variant="secondary" onClick={partialPayment}>
+              Partial Payment
+            </Button>{" "}
+            <Button variant="primary" onClick={fullPayment}>
+              Full Payment
+            </Button>{" "}
           </div>
-          <br />
-          <br />
-          <Button variant="secondary" onClick={partialPayment}>
-            Partial Payment
-          </Button>{" "}
-          <Button variant="primary" onClick={fullPayment}>
-            Full Payment
-          </Button>{" "}
-        </div>
+        )}
       </Modal>
-      <div style={{display:"flex",justifyContent:"center",fontSize:"30px",marginTop:"5vh"}}>Your Orders:</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "30px",
+          marginTop: "5vh",
+        }}
+      >
+        Your Orders:
+      </div>
       <br />
       <br />
       <>
@@ -318,9 +361,18 @@ const CCurrentorders = (props) => {
         NoteIns == [] ||
         NoteIns == undefined ||
         NoteIns.length == 0 ? (
-          <div style={{display:"flex",justifyContent:"center",fontSize:"20px",marginTop:"5vh"}}>No Orders Currently</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "20px",
+              marginTop: "5vh",
+            }}
+          >
+            No Orders Currently
+          </div>
         ) : (
-          <div style={{padding:"0 3vw"}}>
+          <div style={{ padding: "0 3vw" }}>
             <Table striped bordered hover>
               <Thead>
                 <Tr>
