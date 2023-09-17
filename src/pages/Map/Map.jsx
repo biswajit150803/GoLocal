@@ -19,6 +19,7 @@ import HawkersHut from "../../contracts/HawkerHut.json";
 import HawkerBox from "../../components/HawkerBox/HawkerBox";
 import { set } from "date-fns";
 import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify";
 function Map(props) {
   AOS.init();
   const myStorage = window.localStorage;
@@ -277,12 +278,17 @@ function Map(props) {
     }
     return result;
   }
+  const [loader,setLoader]=useState(false);
   const handleOrderSubmit = async () => {
     const { contract } = state;
     ////////////////web3 connect and ask payment//////////////////////
     const accountss = await ethereum.request({
       method: "eth_requestAccounts",
     });
+    setLoader(true);
+    // (loader)?<div style={{color:"red"}}>Loading...</div>:<> </>;
+    (loader)?alert("Please wait a bit for the metamask to connect"):<> </>;
+    try{
     const Hash = hashGenerator();
     console.log(Hash);
     let vale = amountRef.current.value.toString();
@@ -328,7 +334,14 @@ function Map(props) {
         );
       }
     }
-  };
+  }
+  catch(err){
+  console.log(err)
+  }
+  finally{
+    setLoader(false);
+  }
+};
   const [download, setDownload] = useState(false);
   useEffect(() => {
     if (ethereum) {
@@ -423,6 +436,7 @@ function Map(props) {
 
   return (
     <>
+    {loader?<div style={{color:"red",fontSize:"5vh"}}>Loading...</div>:<></>}
       <Modal
         className="mode"
         open={open}
@@ -431,6 +445,7 @@ function Map(props) {
         center={true}
         closeIcon={<RxCross2 style={{color:"white",fontSize:"25px"}} />}
       >
+      {loader?<div style={{color:"white",fontSize:"5vh"}}>Loading...</div>:<>
         <div className="moddd">
           {download ? (
             <div className="reques">
@@ -492,7 +507,9 @@ function Map(props) {
             </div>
           )}
         </div>
+        </>}
       </Modal>
+      
       <div className="searchbar">
         <input
           type="text"
