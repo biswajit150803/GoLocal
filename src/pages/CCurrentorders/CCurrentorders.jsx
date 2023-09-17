@@ -192,37 +192,35 @@ const CCurrentorders = (props) => {
       method: "eth_requestAccounts",
     });
     onOpenModal();
-    setLoader(true)
-    try{
-    const res = await contract.methods
-      .cancelPayment(phash)
-      .send({ from: accountss[0] });
-    console.log(res);
-    const va = res.events.success.returnValues[2].toString();
-    alert(
-      res.events.success.returnValues[0] +
-        "\n Payment to your account: " +
-        Web3.utils.fromWei(va, "ether") +
-        " Eth"
-    );
-    if (res.events.success.returnValues[1]) {
-      ////////////////////////web3 receive payment/////////////////////////
-      ////////////////////////////////////////////////////
-      console.log(data);
-      await axios.post(
-        "https://hawkerhut-back.onrender.com/api/web3/customerdeny",
-        data
+    setLoader(true);
+    try {
+      const res = await contract.methods
+        .cancelPayment(phash)
+        .send({ from: accountss[0] });
+      console.log(res);
+      const va = res.events.success.returnValues[2].toString();
+      alert(
+        res.events.success.returnValues[0] +
+          "\n Payment to your account: " +
+          Web3.utils.fromWei(va, "ether") +
+          " Eth"
       );
-      window.location.reload();
+      if (res.events.success.returnValues[1]) {
+        ////////////////////////web3 receive payment/////////////////////////
+        ////////////////////////////////////////////////////
+        console.log(data);
+        await axios.post(
+          "https://hawkerhut-back.onrender.com/api/web3/customerdeny",
+          data
+        );
+        window.location.reload();
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      onCloseModal();
+      setLoader(false);
     }
-  }
-  catch(err){
-    console.log(err)
-  }
-  finally{
-    onCloseModal();
-    setLoader(false)
-  }
   };
   const customerAccept = async (e, id, hash) => {
     const { contract } = state;
@@ -327,7 +325,14 @@ const CCurrentorders = (props) => {
         closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
         {loader ? (
-          <div style={{ color: "white", fontSize: "5vh" }}>Loading...</div>
+          /* <div style={{color:"white",fontSize:"5vh"}}>Loading...</div> */
+          <div style={{ color: "white", fontSize: "3vh" }}>
+            <img
+              src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
+              style={{ width: "35px", height: "35px" }}
+            />{" "}
+            &nbsp;Loading....
+          </div>
         ) : (
           <div className="moddd">
             <div className="mod-top">
