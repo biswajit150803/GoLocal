@@ -225,7 +225,9 @@ const BCurrentorders = (props) => {
         center={true}
         closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
-      {loader?<div style={{color:"white",fontSize:"5vh"}}>Loading...</div>:<>
+      {loader?
+      /* <div style={{color:"white",fontSize:"5vh"}}>Loading...</div> */
+      <div style={{color:"white",fontSize:"3vh"}}><img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" style={{width:"35px",height:"35px"}} /> &nbsp;Loading....</div>:<>
         <div className="moddd">
           <div className="mod-top">Reason for rejecting the order</div>
           <br />
@@ -245,7 +247,9 @@ const BCurrentorders = (props) => {
         center={true}
         closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
-      {loader?<div style={{color:"white",fontSize:"5vh"}}>Loading...</div>:<></>
+      {loader?
+      /* <div style={{color:"white",fontSize:"5vh"}}>Loading...</div> */
+      <div style={{color:"white",fontSize:"3vh"}}><img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" style={{width:"35px",height:"35px"}} /> &nbsp;Loading....</div>:<></>
       }
       </Modal>
       {download ? (
