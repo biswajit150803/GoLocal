@@ -213,7 +213,7 @@ width: 24vw;
 /**/
 overflow-x: hidden;
 border-radius: 25px;
-background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+background: white;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 /* For webkit-based browsers (Chrome, Safari) */
