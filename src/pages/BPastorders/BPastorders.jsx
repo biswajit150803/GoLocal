@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Web3 from "web3";
 import Download from "../Download/Download";
 import WrongNetwork from "../WrongNetwork/WrongNetwork";
-
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import HawkersHut from '../../contracts/HawkerHut.json';
@@ -227,7 +228,7 @@ const BPastorders = (props) => {
                     <Td>{note.updatedAt}</Td>
                     <Td>{(note.HawkerStage==="Success")?
                       <Button variant="success"  onClick={event => hawkerReceive(event,note._id,note.Hash)}> Receive</Button>:
-                      <>{note.HawkerStage}</>}</Td>
+                      <>{(note.RejMessage!=undefined)?<>{note.RejMessage}</>:<>No message</>}</>}</Td>
                     <Td>{note.Amt}</Td>
                   </Tr>)
           })}

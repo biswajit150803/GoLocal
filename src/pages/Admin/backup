@@ -156,21 +156,6 @@ const Admin = (props) => {
       <NavAdmin changeTab={change} logout={logout} />
       {tab === 0 ? (
         <div className="admin">
-          <div className="ayushi111">
-            <div>
-              Total Amount
-              <h3>{amount}&nbsp;SHM</h3>
-            </div>
-              <div>
-            Finished Transactions
-            <div className="Prog"></div>
-            </div>
-            
-              <div>
-            Waiting Transactions
-            <div className="Prog"></div>
-            </div>
-          </div>
           <div>
             <div>
               <input
@@ -233,7 +218,7 @@ const Admin = (props) => {
                 </Table>
                 <div className="total">
                   <h3 style={{ color: "white" }}>
-                    {/*Total amount... */}
+                    Total Amount: {amount}&nbsp;SHM
                   </h3>
                 </div>
               </div>
@@ -246,7 +231,7 @@ const Admin = (props) => {
         
           <div>
             {hawkerss.length === 0 ? (
-              <h4 style={{color: "white"}}>No hawkers currently !</h4>
+              <>no hawkers currently</>
             ) : (
               <div>
                 <Table>
