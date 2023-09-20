@@ -524,6 +524,11 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 
   .customervideo{
     background-color:#848181 !important;
+    /* background-image: url("https://res.cloudinary.com/dqy7m95yz/image/upload/v1695187724/WhatsApp_Image_2023-09-19_at_22.42.07_kihrv2.jpg")!important;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: cover; */
     padding-bottom:5vh; 
 }
 .transfaq1{
