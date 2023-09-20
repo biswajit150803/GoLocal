@@ -144,7 +144,7 @@ function About() {
           />
            <Members
             name="Arnab Chakraborty"
-            photo="./arnab.jpg"
+            photo="./arnab2.jpg"
             instagram="https://instagram.com/arnab_chakraborty_black_jack?igshid=YTQwZjQ0NmI0OA==/"
             facebook="https://www.facebook.com/arnab.chakraborty.378199?mibextid=ZbWKwL"
             linkedin="https://www.linkedin.com/in/arnab-chakraborty-737492230/"
