@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Ecommerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an ecommerce website built using React.js and deployed on Shardeum. It utilizes web3.js for smart contract integration.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The project aims to provide a platform for local roadside vendors to sell their goods to nearby customers. The website features a vendor portal with translation options and a form to update the list of items for sale. Customers can search for vendors based on categories and find the desired hawkers according to their search queries. Payment is facilitated through Metamask, with options for partial and full payments.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Vendor Portal: Provides a dedicated portal for roadside vendors to manage their selling item lists and update them as needed.
+- Translation Options: Supports translation functionality in the vendor portal for better accessibility.
+- Category-based Search: Allows customers to search for vendors based on specific categories, making it easier to find relevant hawkers.
+- Metamask Integration: Enables customers to make payments using Metamask, providing options for both partial and full payments.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React.js: A JavaScript library for building user interfaces.
+- Shardeum: The deployment platform used for hosting the ecommerce website.
+- web3.js: A JavaScript library for interacting with Ethereum and smart contracts.
+- Metamask: A cryptocurrency wallet and gateway for interacting with the Ethereum network.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository: `git clone https://github.com/your-repo.git`
+2. Navigate to the project directory: `cd your-project`
+3. Install the dependencies: `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configuration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Rename the `.env.example` file to `.env`.
+2. Update the environment variables in the `.env` file as per your configuration.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. Start the development server: `npm start`
+2. Open the browser and visit `http://localhost:3000` to access the website.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request.

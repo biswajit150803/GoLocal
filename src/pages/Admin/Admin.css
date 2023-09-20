@@ -5,9 +5,10 @@
     padding: 5vh 5vw;
     margin-top: 15vh;
 }
-Tr,Td,Tbody,Thead,Table{
-    color: white;   
-    border: 1px solid white;
+Tr, Td, Tbody, Thead, Table {
+    color: white;
+    border: 1px solid #153e4300;
+    padding: 8px;
 }
 @media(max-width: 40em)
 {
@@ -16,9 +17,118 @@ Tr,Td,Tbody,Thead,Table{
     padding: 0.25em;
 }
 }
+
+.responsiveTable {
+    width: 100%;
+    margin-top: 6vh;
+    box-shadow: -4px -2px 14px 2px #153e43;
+}
 .react-date-picker {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: white;
+}
+*, ::after, ::before {
+    box-sizing: content-box;
+    border-radius: 2px;
+}
+
+.react-date-picker__wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    border: thin solid #112c4500;
+    margin: 2vh 2vh;
+    box-shadow: -1px 0px 7px 0px #112c45;
+}
+
+.react-date-picker__inputGroup__input {
+    min-width: 0.54em;
+    height: 100%;
+    position: relative;
+    padding: 0 1px;
+    border: 0;
+    background: none;
+    font: inherit;
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    color: white;
+}
+
+.admin {
+    background-color: rgb(8 78 88);
+    min-height: 100vh;
+    padding: 5vh 5vw;
+    margin-top: 15vh;
+}
+
+tr:nth-child(even) {
+    background-color: #196e7b;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 1.5px;
+    font-family: inherit;
+    font-size: smaller;
+    line-height: inherit;
+}
+
+h3{
+    margin-top: 2vh;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+element.style {
+    box-shadow: 0px 1px 8px 1px #123d3d;
+}
+
+dl, ol, ul {
+    margin-top: 1px;
+    margin-bottom: 0vh;
+}
+
+.react-date-picker *{
+    box-sizing: border-box;
+    stroke: white;
+}
+
+.ayushi111{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.ayushi111 > div {
+    background-color: #4d8596;
+    margin: 10px;
+    padding: 5vh;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0px 0px 8px 2px #153e43;
+}
+.ayuProg {
+    background-color: rgb(92, 187, 194);
+    color: white;
+    padding: 1%;
+    text-align: left;
+    font-size: 20px;
+}
+
+div.Prog {
+    width: 50%;
+}
+
+div.Prog{
+    width: 60%;
 }

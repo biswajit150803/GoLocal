@@ -36,7 +36,7 @@ function Report() {
         <div className="left1">
           <h1 className="text-5xl pt-4 mt-16 ml-24 h11">Report a Problem</h1>
           <div className="ml-24 text-m pt-2 pr-40 h44">
-            Got a bug or facing issues. Fill out the form and we will resolve
+            Got a bug or facing issues? Fill out the form and we will resolve
             your issue within 24 hours.
           </div>
 
@@ -70,7 +70,7 @@ function Report() {
               value="Send"
               className="button12 bg-indigo-500 border-indigo-500 border-2 text-white text-m rounded w-48 h-12"
             >
-              Send my message
+              Send message
             </Button>
           </form>
         </div>

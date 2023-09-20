@@ -19,6 +19,7 @@ import HawkersHut from "../../contracts/HawkerHut.json";
 import HawkerBox from "../../components/HawkerBox/HawkerBox";
 import { set } from "date-fns";
 import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify";
 function Map(props) {
   AOS.init();
   const myStorage = window.localStorage;
@@ -220,6 +221,14 @@ function Map(props) {
   const orderRef = useRef();
   const phoneRef = useRef();
   const amountRef = useRef();
+  const [phonen,setphonen]=useState();
+  const [message,setmessage]=useState();
+  const messageChange = (e) => {
+    setmessage(e.target.value);
+  };
+  const phoneChange = (e) => {
+    setphonen(e.target.value);
+  };
   const mesRef = useRef();
   const { ethereum } = window;
   /////////////////hash for payment////////////////////
@@ -277,58 +286,69 @@ function Map(props) {
     }
     return result;
   }
-  const handleOrderSubmit = async () => {
+  const [loader,setLoader]=useState(false);
+  const handleOrderSubmit = async (e) => {
+    e.preventDefault();
     const { contract } = state;
     ////////////////web3 connect and ask payment//////////////////////
     const accountss = await ethereum.request({
       method: "eth_requestAccounts",
     });
+    setLoader(true);
+    try{
     const Hash = hashGenerator();
     console.log(Hash);
     let vale = amountRef.current.value.toString();
     const res = await contract.methods
       .pay(Hash)
       .send({ value: Web3.utils.toWei(vale, "ether"), from: accountss[0] });
-    console.log(res);
-    const va = res.events.success.returnValues[2].toString();
+    console.log(await res);
+    const va = await res.events.success.returnValues[2].toString();
     alert(
       res.events.success.returnValues[0] +
         "\n Payment: " +
         Web3.utils.fromWei(va, "ether") +
         " Eth"
     );
-    if (res.events.success.returnValues[1]) {
+    console.log(await res.events.success.returnValues[1])
+    if (await res.events.success.returnValues[1]) {
       /////////////////if error or denied then cancel order///////////////
       const data = {
         Hash: Hash,
         CUser: props.user,
         HUser: tempUser,
-        CPhone: phoneRef.current.value,
+        CPhone: phonen,
         Lat: per.lat,
         Long: per.long,
-        Message: mesRef.current.value,
+        Message: message,
       };
 
-      if (phoneRef.current.value.length !== 10) {
-        alert("Enter a valid phone no");
-      } else {
+      
         await axios.post(
           "https://hawkerhut-back.onrender.com/api/web3/order",
           data
         );
         console.log(
-          "O: " +
-            orderRef.current.value +
+         
             " P:" +
-            phoneRef.current.value +
+            phonen +
+            " M:" +
+            message +
             " L:" +
             per.lat +
             " L:" +
             per.long
         );
-      }
+        setLoader(false);
     }
-  };
+  }
+  catch(err){
+  console.log(err)
+  }
+  finally{
+    setLoader(false);
+  }
+};
   const [download, setDownload] = useState(false);
   useEffect(() => {
     if (ethereum) {
@@ -388,7 +408,7 @@ function Map(props) {
           //    pins[i]]
           // ));
           arr.push(pins[i]);
-          console.log(pins[i]);
+          //console.log(pins[i]);
         }
       }
       if(load){
@@ -431,6 +451,10 @@ function Map(props) {
         center={true}
         closeIcon={<RxCross2 style={{color:"white",fontSize:"25px"}} />}
       >
+      {loader?
+      /* <div style={{color:"white",fontSize:"5vh"}}>Loading...</div> */
+      <div style={{color:"white",fontSize:"3vh"}}><img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" style={{width:"35px",height:"35px"}} /> &nbsp;Loading....</div>
+      :<>
         <div className="moddd">
           {download ? (
             <div className="reques">
@@ -451,7 +475,7 @@ function Map(props) {
                       className="requesmes"
                       type="text"
                       placeholder="Enter your requirements or message for the hawker"
-                      ref={mesRef}
+                      onChange={messageChange}
                     />
                   </div>
                   <br />
@@ -462,7 +486,7 @@ function Map(props) {
                       className="requesmes"
                       type="number"
                       placeholder="Enter your phone no"
-                      ref={phoneRef}
+                      onChange={phoneChange}
                     />
                   </div>
                   <br />
@@ -492,7 +516,9 @@ function Map(props) {
             </div>
           )}
         </div>
+        </>}
       </Modal>
+      
       <div className="searchbar">
         <input
           type="text"
