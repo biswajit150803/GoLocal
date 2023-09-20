@@ -7,7 +7,7 @@ function Members({ name, photo, linkedin, github, facebook, instagram }) {
   return (
     <div className="pt-16 mainbox">
       <div className="membercard ">
-        <img src={photo} alt="profilephoto" />
+        <img className="img" src={photo} alt="profilephoto"/>
         <h4 className="text-2xl">{name}</h4>
         <div className="links">
           <a href={linkedin}>
@@ -116,20 +116,39 @@ function About() {
             github="https://github.com/7twik"
           />
           <Members
-            name="Rohit Kapat"
-            photo="./3.png"
-            instagram="https://www.instagram.com/rohitt.jpg"
-            linkedin="https://www.linkedin.com/in/rohitkapat/"
-            facebook="https://www.facebook.com/profile.php?id=100011191839350"
-            github="https://github.com/RohitKapat"
+            name="Amisha Kumari"
+            photo="./am.jpg"
+            instagram="https://www.instagram.com/amishasingh_2304"
+            linkedin="https://www.linkedin.com/in/amisha-singh-07ab66262/"
+            facebook="https://www.facebook.com/profile.php?id=100072944253264"
+            github="https://github.com/Amisha-Singh-2002"
+          />
+         </div>
+         <div className="list">
+
+          <Members
+            name="Ayushi Nayan"
+            photo="./nayan.jpg"
+            instagram="https://www.instagram.com/ayu04shi/"
+            facebook="https://www.facebook.com/vibek.roy.3910"
+            linkedin="https://www.linkedin.com/in/ayushi-nayan-515b7326b/"
+            github="https://github.com/ayu06shi"
           />
           <Members
-            name="Vibek Roy"
-            photo="./4.png"
-            instagram="https://www.instagram.com/vibekroy321/"
+            name="Geetanjali Paul"
+            photo="./anjali.jpg"
+            instagram="https://instagram.com/__chiquitaa_?igshid=NzZlODBkYWE4Ng==/"
             facebook="https://www.facebook.com/vibek.roy.3910"
-            linkedin="https://www.linkedin.com/in/vibekroy/"
-            github="https://github.com/VibekRoy"
+            linkedin="https://www.linkedin.com/in/geetanjali-pal/"
+            github="https://github.com/Geetanjali-0402"
+          />
+           <Members
+            name="Arnab Chakraborty"
+            photo="./arnab.jpg"
+            instagram="https://instagram.com/arnab_chakraborty_black_jack?igshid=YTQwZjQ0NmI0OA==/"
+            facebook="https://www.facebook.com/arnab.chakraborty.378199?mibextid=ZbWKwL"
+            linkedin="https://www.linkedin.com/in/arnab-chakraborty-737492230/"
+            github="https://github.com/ArnabChakraborty123"
           />
         </div>
       </div>
