@@ -18,13 +18,14 @@ The project aims to provide a platform for local roadside vendors to sell their 
 - React.js: A JavaScript library for building user interfaces.
 - Shardeum: The deployment platform used for hosting the ecommerce website.
 - web3.js: A JavaScript library for interacting with Ethereum and smart contracts.
+-Solidity:Used for writing smart contracts
 - Metamask: A cryptocurrency wallet and gateway for interacting with the Ethereum network.
 
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/your-repo.git`
 2. Navigate to the project directory: `cd your-project`
-3. Install the dependencies: `npm install`
+3. Install the dependencies: `npm install --legacy-peer-deps`
 
 ## Configuration
 
@@ -33,8 +34,8 @@ The project aims to provide a platform for local roadside vendors to sell their 
 
 ## Usage
 
-1. Start the development server: `npm start`
-2. Open the browser and visit `http://localhost:3000` to access the website.
+1. Start the development server: `npm run dev`
+2. Open the browser and visit `http://localhost:5173` to access the website.
 
 ## Contributing
 

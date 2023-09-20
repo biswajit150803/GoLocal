@@ -741,7 +741,7 @@ function Buisness() {
                 </>
             </div>
           </div>
-          <div id="gets">
+          <div id="gets" style={{backgroundColor:"#848181"}}>
             {/* <GetStarted lang={lang} data-aos="fade-up" /> */}
             <Video url="https://www.youtube.com/watch?v=LapOdjjjJgQ" text={t("n20")} />
           </div>
