@@ -442,7 +442,7 @@ function Map(props) {
   }
 
   return (
-    <>
+    <div className="map-sidebox">
       <Modal
         className="mode"
         open={open}
@@ -540,7 +540,7 @@ function Map(props) {
         style={{
           overflowX: "hidden",
           display: "flex",
-          justifyContent: "space-arond",
+          justifyContent: "space-around",
         }}
       >
         <div
@@ -724,16 +724,16 @@ function Map(props) {
           }}
         >
           <div className="writeuph">
-            <h2 style={{ color: "white" }}>Hawkers Nearby</h2>
+            <h2 style={{ color: "#579bb1",fontWeight:"600",marginLeft:"2vw" }}>Hawkers Nearby</h2>
           </div>
 
           {sideBox.length===0 || sideBox == null ? (
-            <h2 style={{color:"white"}}>No Sellers nearby right now
+            <h2 style={{color:"#579bb1",fontWeight:"600"}}>No Sellers nearby right now
               <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" style={{width:"30px",height:"30px"}} />
             </h2>
           ) : (
             <div className="hawkerboxGrandParent">
-              <div className="hbp">
+              <div className="hbp" style={{backgroundColor:"white",border:"4px solid black"}}>
                 {sideBox.map((p, key) => {
                   //let usernameee = p.username;
                   return (
@@ -767,7 +767,7 @@ function Map(props) {
           </div> */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

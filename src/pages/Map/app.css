@@ -1,5 +1,5 @@
 .card {
-  width: 270px!important;
+  width: 270px !important;
   height: 360px !important;
   display: flex;
   flex-direction: column;
@@ -7,14 +7,13 @@
   background-color: rgb(236, 238, 235);
   font-weight: 800;
 }
-.mapwidth{
+
+.mapwidth {
   width: 54vw !important;
-  border: 2px;
-  border-color: teal;
+  border:5px solid black;
+  border-radius: 15px;
 }
-.bg1101{
-  background-image: url("./back.jpg");
-}
+
 label {
   width: max-content;
   color: tomato;
@@ -26,8 +25,9 @@ label {
 .desc {
   font-size: 14px;
 }
-.map_mark{
-  color:📘 !important;
+
+.map_mark {
+  color: 📘 !important;
 }
 
 .star {
@@ -43,13 +43,13 @@ label {
 }
 
 /* form {
-  width: 20vw;
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: rgb(88, 87, 87);
-} */
+    width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(88, 87, 87);
+  } */
 
 input {
   border: none;
@@ -98,43 +98,47 @@ textarea {
   cursor: pointer;
 }
 
-.button:focus{
+.button:focus {
   outline: none;
 }
 
-.logout{
+.logout {
   background-color: tomato;
 }
 
-.login{
+.login {
   background-color: teal;
   margin-right: 10px;
 }
 
-.register{
+.register {
   background-color: slateblue;
 }
-.searchbar{
+
+.searchbar {
   color: white;
   /* margin-bottom: 2vh; */
   margin-top: 10vh;
   width: 70vw;
   margin-left: 18vw;
   height: 6vh;
-  
+
 }
-.searchInput{
+
+.searchInput {
   width: 50vw;
   height: 6vh;
   border: none;
   border-radius: 20px 0 0 20px;
 }
-.searchInput::placeholder{
+
+.searchInput::placeholder {
   color: rgb(185, 184, 184);
   font-size: 18px;
   padding-left: 7px;
 }
-.searchbtn{
+
+.searchbtn {
   background-color: #19c94b;
   color: white;
   height: 6vh;
@@ -142,120 +146,154 @@ textarea {
   border-radius: 0 20px 20px 0;
   border: none;
 }
-.searchbtnRes{
+
+.searchbtnRes {
   background-color: #5553b7;
   color: white;
   height: 6vh;
   margin-left: 1.5vw;
   width: 5vw;
   border-radius: 3px;
+  border: none;
 }
-@media(max-width:850px){
-  .searchbar{
+
+@media(max-width:850px) {
+  .searchbar {
     width: 90vw;
     margin-left: 10vw;
   }
-  .searchInput{
+
+  .searchInput {
     width: 70vw;
   }
-  .searchInput::placeholder{
-    font-size: 14px;}
-  .searchbtn{
+
+  .searchInput::placeholder {
+    font-size: 14px;
+  }
+
+  .searchbtn {
     width: 10vw;
     height: 6vh;
   }
-  .searchbtnRes{
+
+  .searchbtnRes {
     width: 20vw;
     margin-top: 2vh;
-    margin-left:30vw;
+    margin-left: 30vw;
   }
+
   /* form{
-    width: 80vw !important;
-    height: 40vh !important;
-  } */
-  .reques{
+      width: 80vw !important;
+      height: 40vh !important;
+    } */
+  .reques {
     padding: 0 !important;
   }
-  .writeuph{
+
+  .writeuph {
     margin-top: 5vh;
   }
 }
-.reques{
-  color:teal;
-  padding:5vh 5vw 5vh 5vw;
+
+.reques {
+  color: teal;
+  padding: 5vh 5vw 5vh 5vw;
 }
-.requesin{
+
+.requesin {
   display: flex;
   justify-content: space-between;
 }
-@media(min-width:850px){
-.requesmes{
-  width: 20vw;
-}
-}
-.btncenter{
-/* width:max-content; */
-display: flex;
-justify-content: center;
+
+@media(min-width:850px) {
+  .requesmes {
+    width: 20vw;
+  }
 }
 
-.hawkerboxGrandParent{
-overflow: hidden;
-height: 50vh;
-width:35vw;
-border-radius: 5px;
+.btncenter {
+  /* width:max-content; */
+  display: flex;
+  justify-content: center;
 }
-.hbp{
-height: 100%;
-overflow-y:scroll;
-width: 50vw;
-width: 24vw;
-/**/
-overflow-x: hidden;
-border-radius: 25px;
-background: white;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+.hawkerboxGrandParent {
+  overflow: hidden;
+  height: 50vh;
+  width: 35vw;
+  border-radius: 5px;
 }
+
+.hbp {
+  height: 100%;
+  overflow-y: scroll;
+  width: 50vw;
+  width: 24vw;
+  /**/
+  overflow-x: hidden;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 /* For webkit-based browsers (Chrome, Safari) */
 .hbp::-webkit-scrollbar {
-width: 0.5em; /* adjust as needed */
+  width: 0.5em;
+  /* adjust as needed */
 }
 
 .hbp::-webkit-scrollbar-track {
-background-color: transparent; /* or any color you want */
+  background-color: transparent;
+  /* or any color you want */
 }
 
 .hbp::-webkit-scrollbar-thumb {
-background-color: transparent; /* or any color you want */
+  background-color: transparent;
+  /* or any color you want */
 }
 
 /* For Firefox */
 /* Note: As of September 2021, Firefox requires -moz prefix for scrollbar styling. The prefix may change in the future. */
 .hbp {
-scrollbar-width: thin; /* adjust as needed */
-scrollbar-color: transparent transparent; /* or any color you want */
+  scrollbar-width: thin;
+  /* adjust as needed */
+  scrollbar-color: transparent transparent;
+  /* or any color you want */
 }
+
 /* @media (min-width:850px){
-.hawker{
-  padding-left: 3vw;
-}
+  .hawker{
+    padding-left: 3vw;
+  }
 } */
 
 @media (max-width: 768px) {
-  .hawkerboxGrandParent{
-    padding-left: 5px!important;
-    width:90vw !important;
-    margin-left: 0.2vw ;
-   
+  .hawkerboxGrandParent {
+    padding-left: 5px !important;
+    width: 90vw !important;
+    margin-left: 0.2vw;
+
   }
-  .hbp{
-    width: 90vw!important;
+
+  .hbp {
+    width: 90vw !important;
   }
-  .hawkerboxParent{
+
+  .hawkerboxParent {
     width: 90vw;
     /* margin-left: -3vw; */
   }
-  .writeup{
-    padding-left: 0!important;
+
+  .writeup {
+    padding-left: 0 !important;
   }
+}
+.map-sidebox {
+  background-image: url("https://res.cloudinary.com/dcyfkgtgv/image/upload/v1689749288/back_clnjng.jpg") !important;
+  /* background-image: url("https://res.cloudinary.com/dqy7m95yz/image/upload/v1695187724/WhatsApp_Image_2023-09-19_at_22.42.07_kihrv2.jpg")!important; */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: cover;
 }
