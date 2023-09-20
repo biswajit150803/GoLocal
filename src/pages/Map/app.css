@@ -1,256 +1,261 @@
 .card {
-    width: 270px!important;
-    height: 360px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: rgb(236, 238, 235);
-    font-weight: 800;
-  }
-  .mapwidth{
-    width: 54vw !important;
-  }
-  label {
-    width: max-content;
-    color: tomato;
-    font-size: 13px;
-    border-bottom: 0.5px solid tomato;
-    margin: 3px 0;
-  }
+  width: 270px!important;
+  height: 360px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(236, 238, 235);
+  font-weight: 800;
+}
+.mapwidth{
+  width: 54vw !important;
+  border: 2px;
+  border-color: teal;
+}
+.bg1101{
+  background-image: url("./back.jpg");
+}
+label {
+  width: max-content;
+  color: tomato;
+  font-size: 13px;
+  border-bottom: 0.5px solid tomato;
+  margin: 3px 0;
+}
+
+.desc {
+  font-size: 14px;
+}
+.map_mark{
+  color:📘 !important;
+}
+
+.star {
+  color: gold;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+}
+
+/* form {
+  width: 20vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(88, 87, 87);
+} */
+
+input {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 12px;
+  color: rgb(185, 184, 184);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.submitButton {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: tomato;
+  cursor: pointer;
+}
+
+.buttons,
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:focus{
+  outline: none;
+}
+
+.logout{
+  background-color: tomato;
+}
+
+.login{
+  background-color: teal;
+  margin-right: 10px;
+}
+
+.register{
+  background-color: slateblue;
+}
+.searchbar{
+  color: white;
+  /* margin-bottom: 2vh; */
+  margin-top: 10vh;
+  width: 70vw;
+  margin-left: 18vw;
+  height: 6vh;
   
-  .desc {
-    font-size: 14px;
-  }
-  .map_mark{
-    color:📘 !important;
-  }
-  
-  .star {
-    color: gold;
-  }
-  
-  .username {
-    font-size: 14px;
-  }
-  
-  .date {
-    font-size: 12px;
-  }
-  
-  /* form {
-    width: 20vw;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: rgb(88, 87, 87);
-  } */
-  
-  input {
-    border: none;
-    border-bottom: 1px solid gray;
-  }
-  
-  input::placeholder,
-  textarea::placeholder {
-    font-size: 12px;
-    color: rgb(185, 184, 184);
-  }
-  
-  input:focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-  }
-  
-  textarea {
-    border: none;
-    border-bottom: 1px solid gray;
-  }
-  
-  .submitButton {
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    color: white;
-    background-color: tomato;
-    cursor: pointer;
-  }
-  
-  .buttons,
-  .logout {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .button {
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .button:focus{
-    outline: none;
-  }
-  
-  .logout{
-    background-color: tomato;
-  }
-  
-  .login{
-    background-color: teal;
-    margin-right: 10px;
-  }
-  
-  .register{
-    background-color: slateblue;
-  }
+}
+.searchInput{
+  width: 50vw;
+  height: 6vh;
+  border: none;
+  border-radius: 20px 0 0 20px;
+}
+.searchInput::placeholder{
+  color: rgb(185, 184, 184);
+  font-size: 18px;
+  padding-left: 7px;
+}
+.searchbtn{
+  background-color: #19c94b;
+  color: white;
+  height: 6vh;
+  width: 3.8vw;
+  border-radius: 0 20px 20px 0;
+  border: none;
+}
+.searchbtnRes{
+  background-color: #5553b7;
+  color: white;
+  height: 6vh;
+  margin-left: 1.5vw;
+  width: 5vw;
+  border-radius: 3px;
+}
+@media(max-width:850px){
   .searchbar{
-    color: white;
-    /* margin-bottom: 2vh; */
-    margin-top: 10vh;
-    width: 70vw;
-    margin-left: 18vw;
-    height: 6vh;
-    
+    width: 90vw;
+    margin-left: 10vw;
   }
   .searchInput{
-    width: 50vw;
-    height: 6vh;
-    border: none;
-    border-radius: 20px 0 0 20px;
+    width: 70vw;
   }
   .searchInput::placeholder{
-    color: rgb(185, 184, 184);
-    font-size: 18px;
-    padding-left: 7px;
-  }
+    font-size: 14px;}
   .searchbtn{
-    background-color: #19c94b;
-    color: white;
+    width: 10vw;
     height: 6vh;
-    width: 3.8vw;
-    border-radius: 0 20px 20px 0;
-    border: none;
   }
   .searchbtnRes{
-    background-color: #5553b7;
-    color: white;
-    height: 6vh;
-    margin-left: 1.5vw;
-    width: 5vw;
-    border-radius: 3px;
-  }
-  @media(max-width:850px){
-    .searchbar{
-      width: 90vw;
-      margin-left: 10vw;
-    }
-    .searchInput{
-      width: 70vw;
-    }
-    .searchInput::placeholder{
-      font-size: 14px;}
-    .searchbtn{
-      width: 10vw;
-      height: 6vh;
-    }
-    .searchbtnRes{
-      width: 20vw;
-      margin-top: 2vh;
-      margin-left:30vw;
-    }
-    /* form{
-      width: 80vw !important;
-      height: 40vh !important;
-    } */
-    .reques{
-      padding: 0 !important;
-    }
-    .writeuph{
-      margin-top: 5vh;
-    }
-  }
-  .reques{
-    color:teal;
-    padding:5vh 5vw 5vh 5vw;
-  }
-  .requesin{
-    display: flex;
-    justify-content: space-between;
-  }
-  @media(min-width:850px){
-  .requesmes{
     width: 20vw;
+    margin-top: 2vh;
+    margin-left:30vw;
+  }
+  /* form{
+    width: 80vw !important;
+    height: 40vh !important;
+  } */
+  .reques{
+    padding: 0 !important;
+  }
+  .writeuph{
+    margin-top: 5vh;
   }
 }
-.btncenter{
-  /* width:max-content; */
+.reques{
+  color:teal;
+  padding:5vh 5vw 5vh 5vw;
+}
+.requesin{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+@media(min-width:850px){
+.requesmes{
+  width: 20vw;
+}
+}
+.btncenter{
+/* width:max-content; */
+display: flex;
+justify-content: center;
 }
 
 .hawkerboxGrandParent{
-  overflow: hidden;
-  height: 50vh;
-  width:35vw;
-  border-radius: 5px;
+overflow: hidden;
+height: 50vh;
+width:35vw;
+border-radius: 5px;
 }
 .hbp{
-  height: 100%;
-  overflow-y:scroll;
-  width: 50vw;
-  width: 24vw;
-  /**/
-  overflow-x: hidden;
-  border-radius: 25px;
+height: 100%;
+overflow-y:scroll;
+width: 50vw;
+width: 24vw;
+/**/
+overflow-x: hidden;
+border-radius: 25px;
 background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 /* For webkit-based browsers (Chrome, Safari) */
 .hbp::-webkit-scrollbar {
-  width: 0.5em; /* adjust as needed */
+width: 0.5em; /* adjust as needed */
 }
 
 .hbp::-webkit-scrollbar-track {
-  background-color: transparent; /* or any color you want */
+background-color: transparent; /* or any color you want */
 }
 
 .hbp::-webkit-scrollbar-thumb {
-  background-color: transparent; /* or any color you want */
+background-color: transparent; /* or any color you want */
 }
 
 /* For Firefox */
 /* Note: As of September 2021, Firefox requires -moz prefix for scrollbar styling. The prefix may change in the future. */
 .hbp {
-  scrollbar-width: thin; /* adjust as needed */
-  scrollbar-color: transparent transparent; /* or any color you want */
+scrollbar-width: thin; /* adjust as needed */
+scrollbar-color: transparent transparent; /* or any color you want */
 }
 /* @media (min-width:850px){
-  .hawker{
-    padding-left: 3vw;
-  }
+.hawker{
+  padding-left: 3vw;
+}
 } */
 
-  @media (max-width: 768px) {
-    .hawkerboxGrandParent{
-      padding-left: 5px!important;
-      width:90vw !important;
-      margin-left: 0.2vw ;
-     
-    }
-    .hbp{
-      width: 90vw!important;
-    }
-    .hawkerboxParent{
-      width: 90vw;
-      /* margin-left: -3vw; */
-    }
-    .writeup{
-      padding-left: 0!important;
-    }
+@media (max-width: 768px) {
+  .hawkerboxGrandParent{
+    padding-left: 5px!important;
+    width:90vw !important;
+    margin-left: 0.2vw ;
+   
   }
+  .hbp{
+    width: 90vw!important;
+  }
+  .hawkerboxParent{
+    width: 90vw;
+    /* margin-left: -3vw; */
+  }
+  .writeup{
+    padding-left: 0!important;
+  }
+}

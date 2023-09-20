@@ -15,6 +15,8 @@ const HawkerBox = (props) => {
   // }, [props.url]);
   return (
     <div className="hawkerbox">
+
+      <div className="hawker1111">
       <div className="paren1" style={{display:"flex"}}>
         <img
           src={props.url || "https://www.w3schools.com/howto/img_avatar.png"}
@@ -57,6 +59,7 @@ const HawkerBox = (props) => {
       </div>*/}
         
       </div> 
+      </div>
       <div style={{display:"flex",justifyContent:"center"}}>
         <button onClick={requestVisit} className="hawkerbox_btn">
           Check
