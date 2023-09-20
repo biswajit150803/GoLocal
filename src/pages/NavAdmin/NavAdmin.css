@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 85%;
 }
 .logoo2
 {
@@ -30,7 +30,7 @@ body {
   margin-top:4vh;
 }
 .navbar12 {
-  height: 19.71951219512195vh;
+  height: 14.71951219512195vh;
   background-color: #20262e;
 
   position: relative;
@@ -49,7 +49,7 @@ body {
   position: sticky;
   top:0;
   z-index: 1000;
-  height: 5vh;
+  height: 0;
 }
 
 .nav-elements12 ul {
@@ -72,6 +72,7 @@ body {
 }
 .hov2:hover{
   color:#950101;
+  cursor: pointer;
 }
 .nav-elements12 ul a.active {
   color: #3e3e3e;

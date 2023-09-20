@@ -603,9 +603,9 @@ function Buisness() {
             </div>
             <div className="writeup">
               <div className="writeuph">
-                <h2 style={{ color: "white" }}>{t("line1")}</h2>
+                <h2 style={{ color: "#848181",textShadow:"2px 2px black",fontWeight:"600" }}>{t("line1")}</h2>
               </div>
-              <span style={{ color: "white" }}>{t("line2")}</span>
+              <span style={{ color: "#848181",fontWeight:"600" }}>{t("line2")}</span>
               <div className="busi_buttons">
                 <div className="btn_div">
                   <button
@@ -741,7 +741,7 @@ function Buisness() {
                 </>
             </div>
           </div>
-          <div id="gets" style={{backgroundColor:"#848181"}}>
+          <div id="gets" className="videobusi">
             {/* <GetStarted lang={lang} data-aos="fade-up" /> */}
             <Video url="https://www.youtube.com/watch?v=LapOdjjjJgQ" text={t("n20")} />
           </div>

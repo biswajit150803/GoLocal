@@ -175,7 +175,7 @@ textarea {
 }
 
 @media (max-width:600px) {
-  .parentcon {
+  .parentcon1 {
     flex-direction: column-reverse;
   }
   .mapdiv{
@@ -244,4 +244,11 @@ Modal{
 }
 .react-switch-bg >div> svg{
   visibility: hidden;
+}
+
+.videobusi{
+  /* background-image: url("./videobg.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%; */
+  background-color: #20262E !important;
 }

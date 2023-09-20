@@ -12,3 +12,7 @@ th{
 .loadingimg{
   width:50vw;
 }
+.react-responsive-modal-modal{
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}

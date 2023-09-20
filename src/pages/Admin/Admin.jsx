@@ -172,16 +172,18 @@ const Admin = (props) => {
             </div>
           </div>
           <div>
-            <div>
+            <div style={{display:"flex",justifyContent:"flex-start",gap:"20px",flexWrap:"wrap",marginLeft:"1vw"}}>
               <input
                 type="text"
                 placeholder="Enter Customer Name"
                 ref={customerRef}
+                style={{width:"35vw",height:"3.5vh"}}
               />
               <input
                 type="text"
                 placeholder="Enter Hawker Name"
                 ref={hawkerRef}
+                style={{width:"35vw",height:"3.5vh"}}
               />
             </div>
             

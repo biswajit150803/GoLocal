@@ -47,7 +47,7 @@ const BNavbar = (props) => {
           </>:
           <div className={`nav-elements  ${showNavbar && "active"}`}>
             <ul>
-              <li className="hov"><img src={userqq} style={{width:"30px",height:"30px"}} alt="user_image"/>Welcome {props.user}</li>
+              <li className="hov"><img src={userqq} style={{width:"40px",height:"40px",borderRadius:"50%"}} alt="user_image"/> &nbsp;Welcome {props.user}</li>
               <li className="hov pot" onClick={home}>
                 Home
               </li>
