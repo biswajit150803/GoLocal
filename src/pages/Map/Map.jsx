@@ -287,7 +287,8 @@ function Map(props) {
     return result;
   }
   const [loader,setLoader]=useState(false);
-  const handleOrderSubmit = async () => {
+  const handleOrderSubmit = async (e) => {
+    e.preventDefault();
     const { contract } = state;
     ////////////////web3 connect and ask payment//////////////////////
     const accountss = await ethereum.request({

@@ -41,13 +41,13 @@
     display: flex;
     flex-direction: column;
 }
-.input1{
+.input1 {
     width: 60%;
-    background-color: #343333;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(12, 12, 12);
     border-radius: 4px;
     outline: none;
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 20px;
     height: 35px;
 }
@@ -65,10 +65,12 @@
 }
 
 .input1:hover{
-    border: 2px solid #6366f1;
+    border:
+     1px solid #525f5f;
 }
+/*4b4c5f*/
 .input1:focus{
-    border: 2px solid #6366f1 !important;
+    border: 2px solid #404157 !important;
 }
 .button12{
     transition: all;
@@ -203,4 +205,16 @@
     
     background-position: center !important;
     background-size: 100% !important;
+}
+
+.border-2 {
+    --bs-border-width: 1px;
+}
+
+
+.nav-elements1 ul a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4b7a8b;
+    text-decoration: none;
 }

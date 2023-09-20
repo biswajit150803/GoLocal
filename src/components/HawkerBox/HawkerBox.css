@@ -22,7 +22,7 @@
     }
 }
 @media (min-width:850px){
-    .hawkerbox{
+    .hawker1111{
         padding-left: 3.5vw;
         padding-right: 3.5vw;
         padding-top: 2vh;
@@ -33,7 +33,7 @@
     background-color: rgb(85, 224, 85);
     color: white;
     border: none;
-    width: 260px;
+    width: 220px;
     border-radius: 3px;
     height: 38px;
     cursor : pointer;
