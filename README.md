@@ -18,7 +18,7 @@ The project aims to provide a platform for local roadside vendors to sell their 
 - React.js: A JavaScript library for building user interfaces.
 - Shardeum: The deployment platform used for hosting the ecommerce website.
 - web3.js: A JavaScript library for interacting with Ethereum and smart contracts.
--Solidity:Used for writing smart contracts
+- Solidity:Used for writing smart contracts
 - Metamask: A cryptocurrency wallet and gateway for interacting with the Ethereum network.
 
 ## Installation

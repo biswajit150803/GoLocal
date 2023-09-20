@@ -451,7 +451,7 @@ function Buisness() {
       />
       {tab === 0 ? (
         <>
-          <div className="parentcon">
+          <div className="parentcon1">
             <div className="mapdiv">
               <ReactMapGL
                 className="mapwidth"

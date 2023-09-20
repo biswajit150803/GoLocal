@@ -297,3 +297,15 @@ textarea {
   background-size: 100%;
   background-size: cover;
 }
+
+/* dl, ol, ul {
+  margin-top: 1px;
+  margin-bottom: 0vh;
+} */
+
+/* button, input, optgroup, select, textarea {
+  margin: 1.5px;
+  font-family: inherit;
+  font-size: smaller;
+  line-height: inherit;
+} */

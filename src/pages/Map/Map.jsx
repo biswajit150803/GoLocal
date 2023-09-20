@@ -539,7 +539,7 @@ function Map(props) {
         style={{
           overflowX: "hidden",
           display: "flex",
-          justifyContent: "space-arond",
+          justifyContent: "space-around",
         }}
       >
         <div
