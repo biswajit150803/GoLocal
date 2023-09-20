@@ -162,14 +162,16 @@ const Admin = (props) => {
               <h3>{amount}&nbsp;SHM</h3>
             </div>
               <div>
-            Finished Transactions
+            Finished Transactions<br/>
+            <br />
             <div className="Prog">
             <ProgressBar variant="success" now={60} />
             </div>
             </div>
             
               <div>
-            Waiting Transactions
+            Waiting Transactions<br/>
+            <br />
             <div className="Prog">
             <ProgressBar variant="info" now={40} />
             </div>
