@@ -38,8 +38,8 @@ function Map(props) {
   const [desc, setDesc] = useState(null);
   const [star, setStar] = useState(0);
   const [viewport, setViewport] = useState({
-    latitude: 47.040182,
-    longitude: 17.071727,
+    latitude: 22.53361232958243,
+    longitude: 88.34676105160081,
     zoom: 13,
   });
   const [showRegister, setShowRegister] = useState(false);
@@ -58,8 +58,8 @@ function Map(props) {
     });
   };
   const [per, Sper] = useState({
-    lat: 47.040182,
-    long: 17.071727,
+    lat: 22.53361232958243,
+    long: 88.34676105160081,
   });
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
