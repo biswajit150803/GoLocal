@@ -83,8 +83,8 @@ function About() {
         <div className="left_content22 pr-20 text-xl text-justify">
           <p>
             We are team Black Hats. We believe in providing a better business
-            experience for the low level businesses. With 'Go Local' we are
-            targeting the "Thelawalas" or simply the cart vendors who move
+            experience for the low level businesses. With 'E-Vendor' we are
+            targeting the "Thellawalas" or simply the cart vendors who move
             around our locality selling their goods.
           </p>
           <p>

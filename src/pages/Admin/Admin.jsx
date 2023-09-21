@@ -11,7 +11,7 @@ import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import NavAdmin from "../NavAdmin/NavAdmin";
 import { ToastContainer, toast } from "react-toastify";
-
+import ProgressBar from 'react-bootstrap/ProgressBar';
 const Admin = (props) => {
   const customerRef = React.useRef();
   const hawkerRef = React.useRef();
@@ -162,13 +162,19 @@ const Admin = (props) => {
               <h3>{amount}&nbsp;SHM</h3>
             </div>
               <div>
-            Finished Transactions
-            <div className="Prog"></div>
+            Finished Transactions<br/>
+            <br />
+            <div className="Prog">
+            <ProgressBar variant="success" now={60} />
+            </div>
             </div>
             
               <div>
-            Waiting Transactions
-            <div className="Prog"></div>
+            Waiting Transactions<br/>
+            <br />
+            <div className="Prog">
+            <ProgressBar variant="info" now={40} />
+            </div>
             </div>
           </div>
           <div>
