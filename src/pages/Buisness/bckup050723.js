@@ -19,7 +19,7 @@ import BCurrentorders from "../BCurrentorders/BCurrentorders";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TodoList from "../../components/todo/TodoList";
-import {RxCross2} from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx";
 import Video from "../Video/Video";
 import FAQH from "../../components/faq/FAQH";
 // Contains the value and text for the options
@@ -38,7 +38,7 @@ const languages = [
 function Buisness() {
   AOS.init();
   const myStoragee = window.localStorage;
-
+  const myStorage = window.localStorage;
   const [todoList, setTodoList] = useState(
     myStoragee.getItem("todos") ? JSON.parse(myStoragee.getItem("todos")) : []
   );
@@ -63,7 +63,7 @@ function Buisness() {
   // change the language
   const handleChange = (e) => {
     setLang(e.target.value);
-    let loc = "http://localhost:5173/business";
+    let loc = "https://evendor-ezvv.onrender.com/business";
     window.location.replace(loc + "?lng=" + e.target.value);
     myStorage.setItem("Language", e.target.value);
   };
@@ -87,7 +87,8 @@ function Buisness() {
   const onOpenModal2 = () => setOpen2(true);
   const onCloseModal2 = () => setOpen2(false);
 
-  const myStorage = window.localStorage;
+  const [blocked, setBlocked] = React.useState(myStorage.getItem("blocked"));
+  
   const [currentUsername, setCurrentUsername] = useState(
     myStorage.getItem("user")
   );
@@ -189,7 +190,7 @@ function Buisness() {
 
   const [lat1, setLat1] = React.useState("0");
   const [long1, setLong1] = React.useState("0");
-  const [url, setUrl] = React.useState("");
+  const [url, setUrl] = React.useState(myStorage.getItem("url"));
   const handleSubmit3 = async () => {
     let lat1, long1;
 
@@ -245,6 +246,8 @@ function Buisness() {
   const handleLogout = () => {
     //logout function
     setCurrentUsername(null);
+    setUrl("");
+    setBlocked(false);
     myStorage.removeItem("user");
   };
   let screenWidth = window.screen.width;
@@ -272,7 +275,7 @@ function Buisness() {
         // "http://localhost:8009/api/pins/del",
         newPin
       );
-      console.log(res);
+      //console.log(res);
     }
     if (!val) {
       const newOrder = {
@@ -339,9 +342,11 @@ function Buisness() {
     console.log("calledme before");
 
     notify();
-    calledme();
+    // calledme();
   };
-
+  React.useEffect(() => {
+    //console.log(url+" ,, "+blocked);
+  });
   const [noteIns, setNoteIns] = React.useState([]);
   const apihawker = async () => {
     const options = {
@@ -352,7 +357,7 @@ function Buisness() {
     axios
       .request(options)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         // setLength(response.data.length);
         response.data.reverse();
         setNoteIns(response.data);
@@ -363,8 +368,10 @@ function Buisness() {
   };
   React.useEffect(() => {
     apihawker();
-  },[]);
-  const [blocked, setBlocked] = React.useState(false);
+  }, []);
+  React.useEffect(() => {
+    console.log(blocked);
+  });
   return (
     <>
       <Modal
@@ -373,7 +380,7 @@ function Buisness() {
         onClose={onCloseModal}
         closeOnOverlayClick={false}
         center={true}
-        closeIcon={<RxCross2 style={{color:"white",fontSize:"25px"}} />}
+        closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
         <div className="moddd">
           <div className="mod-top">Please select your local language </div>
@@ -394,18 +401,20 @@ function Buisness() {
         onClose={onCloseModal1}
         closeOnOverlayClick={false}
         center={true}
-        closeIcon={<RxCross2 style={{color:"white",fontSize:"25px"}} />}
+        closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
         <div className="loginn">
           <Login
-          setUrl={setUrl}
-          setBlocked={setBlocked}
+            setUrl={setUrl}
+            setBlocked={setBlocked}
             setShowLogin={onCloseModal1}
             setCurrentUsername={setCurrentUsername}
             myStorage={myStorage}
             userName={t("n22")}
             password={t("n21")}
             heading={t("n25")}
+            login={t("b2")}
+            wrong={t("n29")}
           />
         </div>
       </Modal>
@@ -415,13 +424,21 @@ function Buisness() {
         onClose={onCloseModal2}
         closeOnOverlayClick={false}
         center={true}
-        closeIcon={<RxCross2 style={{color:"white",fontSize:"25px"}} />}
+        closeIcon={<RxCross2 style={{ color: "white", fontSize: "25px" }} />}
       >
         <div className="reginn">
-          <Register setShowRegister={onCloseModal2}  username={t("n22")}
-          email={t("n23")}
+          <Register
+            setShowRegister={onCloseModal2}
+            username={t("n22")}
+            email={t("n23")}
             password={t("n21")}
-            heading={t("n24")} />
+            heading={t("n24")}
+            register={t("b3")}
+            aadhar={t("n27")}
+            upload={t("n28")}
+            successful={t("n30")}
+            wrong={t("n29")}
+          />
         </div>
       </Modal>
       <ToastContainer />
@@ -434,7 +451,7 @@ function Buisness() {
       />
       {tab === 0 ? (
         <>
-          <div className="parentcon">
+          <div className="parentcon1">
             <div className="mapdiv">
               <ReactMapGL
                 className="mapwidth"
@@ -466,24 +483,32 @@ function Buisness() {
                 </Marker>
                 {pins.map((p) => (
                   <>
-                    <Marker
-                      latitude={p.lat}
-                      longitude={p.long}
-                      offsetLeft={-3.5 * viewport.zoom}
-                      offsetTop={-7 * viewport.zoom}
-                    >
-                      <Room
-                        style={{
-                          fontSize: 5 * viewport.zoom,
-                          color:
-                            currentUsername === p.username
-                              ? "tomato"
-                              : "slateblue",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
-                      />
-                    </Marker>
+                    {p.blocked ? (
+                      <></>
+                    ) : (
+                      <>
+                        <Marker
+                          latitude={p.lat}
+                          longitude={p.long}
+                          offsetLeft={-3.5 * viewport.zoom}
+                          offsetTop={-7 * viewport.zoom}
+                        >
+                          <Room
+                            style={{
+                              fontSize: 5 * viewport.zoom,
+                              color:
+                                currentUsername === p.username
+                                  ? "tomato"
+                                  : "slateblue",
+                              cursor: "pointer",
+                            }}
+                            onClick={() =>
+                              handleMarkerClick(p._id, p.lat, p.long)
+                            }
+                          />
+                        </Marker>
+                      </>
+                    )}
                     {p._id === currentPlaceId && (
                       <Popup
                         key={p._id}
@@ -577,15 +602,16 @@ function Buisness() {
               </ReactMapGL>
             </div>
             <div className="writeup">
+              
               <div className="writeuph">
-                <h2 style={{ color: "white" }}>{t("line1")}</h2>
+                <h2 style={{ color: "#848181",textShadow:"2px 2px black",fontWeight:"600" }}>{t("line1")}</h2>
               </div>
-              <span style={{ color: "white" }}>{t("line2")}</span>
+              <span style={{ color: "#848181",fontWeight:"600" }}>{t("line2")}</span>
               <div className="busi_buttons">
                 <div className="btn_div">
                   <button
                     className="btn_start"
-                    style={{ background: "#00d3ad",border:"none" }}
+                    style={{ background: "#00d3ad", border: "none" }}
                     onClick={() => {
                       const element = document.getElementById("gets");
                       element.scrollIntoView();
@@ -594,7 +620,7 @@ function Buisness() {
                     {t("b1")}
                   </button>
                 </div>
-                  
+
                 {currentUsername && (
                   <div className="btn_div">
                     <button
@@ -603,22 +629,28 @@ function Buisness() {
                         background: "#5553B7",
                         color: "white",
                         borderRadius: "7px",
-                        border:"none"
+                        border: "none",
                       }}
                     >
                       {t("n5")} &nbsp;
-                      <ReactSwitch 
-                      offColor="#bebebe"
-                      onColor="#47aaf2"
-                      // style={(checked)?{backgroundColor:"#47aaf2"}:{backgroundColor:"white"}}
-                       checked={checked} onChange={handleChange1} />
+                      <ReactSwitch
+                        offColor="#bebebe"
+                        onColor="#47aaf2"
+                        // style={(checked)?{backgroundColor:"#47aaf2"}:{backgroundColor:"white"}}
+                        checked={checked}
+                        onChange={handleChange1}
+                      />
                     </button>
                   </div>
                 )}
 
                 {currentUsername ? (
                   <div className="btn_div">
-                    <button className="btn_start login" onClick={handleLogout} style={{backgroundColor:"#d40000",border:"none"}}>
+                    <button
+                      className="btn_start login"
+                      onClick={handleLogout}
+                      style={{ backgroundColor: "#d40000", border: "none" }}
+                    >
                       {t("b4")}
                     </button>
                   </div>
@@ -643,73 +675,76 @@ function Buisness() {
                   </>
                 )}
               </div>
-              {(!blocked)?<>
-              <div>
-                {checked && currentUsername !== null && (
-                  <>
-                    <div className="busi_forms">
-                      <label className="labelb" style={{color:"#818181",textDecoration:"none"}}>{t("n16")}:</label>
-                      <select
-                        value={title}
-                        onChange={async (e) => {
-                          setTitle(e.target.value);
-                          myStorage.setItem("Title", e.target.value);
-                          handleSubmit3();
-                        }}
-                      >
-                        <option value="">{t("n6")}</option>
-                        <option value="Ice-Cream-Seller">{t("n7")}</option>
-                        <option value="Vegetables/Fruits-Seller">
-                          {t("n8")}
-                        </option>
-                        <option value="Cobbler">{t("n9")}</option>
-                        <option value="Recycle">{t("n10")}</option>
-                        <option value="Street-Food-Vendor">{t("n11")}</option>
-                        <option value="Fish-Seller">{t("n12")}</option>
-                        <option value="Electrician">{t("n13")}</option>
-                        <option value="Bakery">{t("n14")}</option>
-                        <option value="All-in-one-store">
-                          {t("n15")}
-                        </option>
-                      </select>
-                      <label className="labelb">{t("n17")}:</label>
-                      <textarea
-                        value={desc}
-                        placeholder="Give a description about your business"
-                        onChange={(e) => {
-                          setDesc(e.target.value);
-                          myStorage.setItem("Desc", e.target.value);
-                          handleSubmit3();
-                        }}
-                      />
-                      {/* <label>Items</label>
+              
+                <>
+                  <div>
+                    {checked && currentUsername !== null && (
+                      <>
+                        <div className="busi_forms">
+                          <label
+                            className="labelb"
+                            style={{ color: "#818181", textDecoration: "none" }}
+                          >
+                            {t("n16")}:
+                          </label>
+                          <select
+                            value={title}
+                            onChange={async (e) => {
+                              setTitle(e.target.value);
+                              myStorage.setItem("Title", e.target.value);
+                              handleSubmit3();
+                            }}
+                          >
+                            <option value="">{t("n6")}</option>
+                            <option value="Ice-Cream-Seller">{t("n7")}</option>
+                            <option value="Vegetables/Fruits-Seller">
+                              {t("n8")}
+                            </option>
+                            <option value="Cobbler">{t("n9")}</option>
+                            <option value="Recycle">{t("n10")}</option>
+                            <option value="Street-Food-Vendor">
+                              {t("n11")}
+                            </option>
+                            <option value="Fish-Seller">{t("n12")}</option>
+                            <option value="Electrician">{t("n13")}</option>
+                            <option value="Bakery">{t("n14")}</option>
+                            <option value="All-in-one-store">{t("n15")}</option>
+                          </select>
+                          <label className="labelb">{t("n17")}:</label>
+                          <textarea
+                            value={desc}
+                            placeholder="Give a description about your business"
+                            onChange={(e) => {
+                              setDesc(e.target.value);
+                              myStorage.setItem("Desc", e.target.value);
+                              handleSubmit3();
+                            }}
+                          />
+                          {/* <label>Items</label>
                   <textarea
                     placeholder="What items are you selling" /> */}
-                      <label className="labelb">{t("n18")}</label>
-                      <TodoList
-                        setCurrentUsername={currentUsername}
-                        todoChange={todoChange}
-                        todoDelete={todoDelete}
-                      />
-                      <button
-                        className="btn_start submit"
-                        onClick={(e) => handleFormSubmit(e)}
-                      >
-                        {t("n19")}
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-              </>:<>You are blocked </>}
+                          <label className="labelb">{t("n18")}</label>
+                          <TodoList
+                            setCurrentUsername={currentUsername}
+                            todoChange={todoChange}
+                            todoDelete={todoDelete}
+                          />
+                          <button
+                            className="btn_start submit"
+                            onClick={(e) => handleFormSubmit(e)}
+                          >
+                            {t("n19")}
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </>
             </div>
           </div>
-          <div className="beforeGS" data-aos="fade-up">
-            {t("beforeGS")}
-          </div>
-          <div id="gets">
+          <div id="gets" className="videobusi">
             {/* <GetStarted lang={lang} data-aos="fade-up" /> */}
-            <Video url="https://youtu.be/fd1Q9T8ZzzE" text={t("n20")} />
+            <Video url="https://www.youtube.com/watch?v=LapOdjjjJgQ" text={t("n20")} />
           </div>
         </>
       ) : tab === 1 ? (
