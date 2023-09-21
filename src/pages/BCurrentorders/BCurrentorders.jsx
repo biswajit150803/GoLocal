@@ -61,14 +61,14 @@ const BCurrentorders = (props) => {
   }, []);
   React.useEffect(() => {
     if (hawker === null || hawker === "") {
-      window.location.replace("http://localhost:3000/Business");
+      window.location.replace("https://evendornb.onrender.com//Business");
     }
   }, [hawker]);
 
   const apihawker = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/hawker",
+      url: "https://evendorbackend.onrender.com/api/web3/hawker",
       params: { HUser: hawker },
     };
     axios
@@ -86,7 +86,7 @@ const BCurrentorders = (props) => {
   const apihawkerdone = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/hawkerdone",
+      url: "https://evendorbackend.onrender.com/api/web3/hawkerdone",
       params: { HUser: hawker },
     };
     axios
@@ -132,7 +132,7 @@ const BCurrentorders = (props) => {
           }; ///WEB3 CONNECT FUNCTION///////////////////////////////////////
           console.log(data);
           await axios.post(
-            "https://hawkerhut-back.onrender.com/api/web3/hawkeraccept",
+            "https://evendorbackend.onrender.com/api/web3/hawkeraccept",
             data
           );
           window.location.reload();
@@ -158,7 +158,7 @@ const BCurrentorders = (props) => {
       alert("Reach near the customer");
     else {
       await axios.post(
-        "https://hawkerhut-back.onrender.com/api/web3/hawkerreach",
+        "https://evendorbackend.onrender.com/api/web3/hawkerreach",
         data
       );
       window.location.reload();
@@ -197,7 +197,7 @@ const BCurrentorders = (props) => {
       };
       console.log(data);
       await axios.post(
-        "https://hawkerhut-back.onrender.com/api/web3/hawkerdeny",
+        "https://evendorbackend.onrender.com/api/web3/hawkerdeny",
         data
       );
       window.location.reload();

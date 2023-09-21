@@ -132,7 +132,7 @@ const CPastorders = (props) => {
       if (phoneRef.current.value.length !== 10) {
         alert("Enter a valid phone no");
       } else {
-        await axios.post("https://hawkerhut-back.onrender.com/api/web3/order", data);
+        await axios.post("https://evendorbackend.onrender.com/api/web3/order", data);
         console.log(
           "O: " +
           orderRef.current.value +
@@ -153,7 +153,7 @@ const CPastorders = (props) => {
     const { contract } = state;
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/customer",
+      url: "https://evendorbackend.onrender.com/api/web3/customer",
       params: { CUser: customer },
     };
     axios
@@ -172,7 +172,7 @@ const CPastorders = (props) => {
     const { contract } = state;
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/customerdone",
+      url: "https://evendorbackend.onrender.com/api/web3/customerdone",
       params: { CUser: customer },
     };
     axios
@@ -210,7 +210,7 @@ const CPastorders = (props) => {
       ////////////////////////web3 receive payment/////////////////////////
       ////////////////////////////////////////////////////
       console.log(data);
-      await axios.post("https://hawkerhut-back.onrender.com/api/web3/customerdeny", data);
+      await axios.post("https://evendorbackend.onrender.com/api/web3/customerdeny", data);
       window.location.reload();
     }
   }
@@ -236,7 +236,7 @@ const CPastorders = (props) => {
       };
       ////////////WEB3 PARTIAL PAYMENT FUNCTION/////////////////////
       ////////////////////////////////////////////////////
-      await axios.post("https://hawkerhut-back.onrender.com/api/web3/customeraccept", data);
+      await axios.post("https://evendorbackend.onrender.com/api/web3/customeraccept", data);
       window.location.reload();
     }
   }
@@ -256,7 +256,7 @@ const CPastorders = (props) => {
       };
       /////////////////////web3 full payment function//////////////////////
       ////////////////////////////////////////
-      await axios.post("https://hawkerhut-back.onrender.com/api/web3/customeraccept", data);
+      await axios.post("https://evendorbackend.onrender.com/api/web3/customeraccept", data);
       window.location.reload();
     }
   }

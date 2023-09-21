@@ -87,7 +87,7 @@ function Map(props) {
 
     try {
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/pins",
+        "https://evendorbackend.onrender.com/api/pins",
         newPin
       );
       setPins([...pins, res.data]);
@@ -99,7 +99,7 @@ function Map(props) {
   const getPins = async () => {
     try {
       const allPins = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/pins"
+        "https://evendorbackend.onrender.com/api/pins"
       );
       setPins(allPins.data);
     } catch (err) {
@@ -128,7 +128,7 @@ function Map(props) {
   const getPins2 = async () => {
     try {
       const allPins = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/pins"
+        "https://evendorbackend.onrender.com/api/pins"
       );
       console.log(allPins.data);
 
@@ -154,7 +154,7 @@ function Map(props) {
   const getItems = async () => {
     try {
       const allItems = await axios.get(
-        "https://hawkerhut-back.onrender.com/api/items"
+        "https://evendorbackend.onrender.com/api/items"
       );
       console.log(allItems.data[0].item);
       console.log(allItems.data[0].username);
@@ -325,7 +325,7 @@ function Map(props) {
 
       
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/order",
+          "https://evendorbackend.onrender.com/api/web3/order",
           data
         );
         console.log(

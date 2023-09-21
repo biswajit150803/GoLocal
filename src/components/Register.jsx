@@ -41,7 +41,7 @@ const Register = () => {
     };
 
     try {
-      await axios.post("https://hawkerhut-back.onrender.com/api/customers/register", newUser);
+      await axios.post("https://evendorbackend.onrender.com/api/customers/register", newUser);
       setError(false);
       setSuccess(true);
       window.location.replace("https://stopby.onrender.com");

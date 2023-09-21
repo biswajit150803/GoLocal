@@ -14,7 +14,7 @@ export default function Login({ setShowLogin,setBlocked,setUrl, setCurrentUserna
     };
     try {
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/users/login",
+        "https://evendorbackend.onrender.com/api/users/login",
         user
       );
       if(!res.data.blocked){
@@ -75,7 +75,7 @@ export default function Login({ setShowLogin,setBlocked,setUrl, setCurrentUserna
 //     };
 //     try {
 //       const res = await axios.post(
-//         "https://hawkerhut-back.onrender.com/api/users/login",
+//         "https://evendorbackend.onrender.com/api/users/login",
 //         user
 //       );
 //       setCurrentUsername(res.data.username);

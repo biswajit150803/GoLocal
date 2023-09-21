@@ -19,7 +19,7 @@ export default function Register({ setShowRegister,username,email,password,headi
 
   //   try {
 
-  //     await axios.post("https://hawkerhut-back.onrender.com/api/users/register", newUser);
+  //     await axios.post("https://evendorbackend.onrender.com/api/users/register", newUser);
   //     setError(false);
   //     setSuccess(true);
       
@@ -56,7 +56,7 @@ export default function Register({ setShowRegister,username,email,password,headi
 
       try {
 
-        await axios.post("https://hawkerhut-back.onrender.com/api/users/register", newUser);
+        await axios.post("https://evendorbackend.onrender.com/api/users/register", newUser);
         setError(false);
         setSuccess(true);
 

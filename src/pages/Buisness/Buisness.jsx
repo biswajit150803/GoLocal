@@ -154,7 +154,7 @@ function Buisness() {
     try {
       //console.log(newPin);
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/pins/updatepins",
+        "https://evendorbackend.onrender.com/api/pins/updatepins",
         // "http://localhost:8009/api/pins/updatepins",
         newPin
       );
@@ -229,7 +229,7 @@ function Buisness() {
     try {
       //console.log(newPin);
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/pins",
+        "https://evendorbackend.onrender.com/api/pins",
         // "http://localhost:8009/api/pins",
         newPin
       );
@@ -271,7 +271,7 @@ function Buisness() {
         username: currentUsername,
       };
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/pins/del",
+        "https://evendorbackend.onrender.com/api/pins/del",
         // "http://localhost:8009/api/pins/del",
         newPin
       );
@@ -282,7 +282,7 @@ function Buisness() {
         username: currentUsername,
       };
       const res = await axios.post(
-        "https://hawkerhut-back.onrender.com/api/items/deleteAll",
+        "https://evendorbackend.onrender.com/api/items/deleteAll",
         // "http://localhost:8009/api/items/deleteAll",
         newOrder
       );
@@ -302,7 +302,7 @@ function Buisness() {
     const getPins = async () => {
       try {
         const allPins = await axios.get(
-          "https://hawkerhut-back.onrender.com/api/pins"
+          "https://evendorbackend.onrender.com/api/pins"
         );
         // console.log(allPins.data);
         setPins(() => {
@@ -332,7 +332,7 @@ function Buisness() {
     notify();
     //console.log(newPin);
     await axios.post(
-      "https://hawkerhut-back.onrender.com/api/pins",
+      "https://evendorbackend.onrender.com/api/pins",
       // "http://localhost:8009/api/pins",
       newPin
     );
@@ -351,7 +351,7 @@ function Buisness() {
   const apihawker = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/hawker",
+      url: "https://evendorbackend.onrender.com/api/web3/hawker",
       params: { HUser: currentUsername },
     };
     axios

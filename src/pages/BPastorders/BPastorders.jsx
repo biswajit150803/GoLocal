@@ -69,14 +69,14 @@ const BPastorders = (props) => {
   }, []);
   React.useEffect(() => {
     if (hawker === null || hawker === "") {
-      window.location.replace("http://localhost:3000/Business");
+      window.location.replace("https://evendornb.onrender.com//Business");
     }
   }, [hawker]);
 
   const apihawker = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/hawker",
+      url: "https://evendorbackend.onrender.com/api/web3/hawker",
       params: { HUser: hawker },
     };
     axios
@@ -95,7 +95,7 @@ const BPastorders = (props) => {
   const apihawkerdone = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/hawkerdone",
+      url: "https://evendorbackend.onrender.com/api/web3/hawkerdone",
       params: { HUser: hawker },
     };
     axios
@@ -130,7 +130,7 @@ const BPastorders = (props) => {
         id:id
       };///WEB3 CONNECT FUNCTION///////////////////////////////////////
       console.log(data);
-      await axios.post("https://hawkerhut-back.onrender.com/api/web3/hawkeraccept", data);
+      await axios.post("https://evendorbackend.onrender.com/api/web3/hawkeraccept", data);
       window.location.reload();
     }
   }
@@ -147,7 +147,7 @@ const BPastorders = (props) => {
       alert("Reach near the customer");
     else
     {   
-        await axios.post("https://hawkerhut-back.onrender.com/api/web3/hawkerreach", data);
+        await axios.post("https://evendorbackend.onrender.com/api/web3/hawkerreach", data);
         window.location.reload();
     }
   }
@@ -168,7 +168,7 @@ const BPastorders = (props) => {
           id:id
         };  
         console.log(data);
-        await axios.post("https://hawkerhut-back.onrender.com/api/web3/hawkerreceive", data);
+        await axios.post("https://evendorbackend.onrender.com/api/web3/hawkerreceive", data);
         window.location.reload();
     }
   }
@@ -188,7 +188,7 @@ const BPastorders = (props) => {
         id:id
       };
       console.log(data);
-      await axios.post("https://hawkerhut-back.onrender.com/api/web3/hawkerdeny", data);
+      await axios.post("https://evendorbackend.onrender.com/api/web3/hawkerdeny", data);
       window.location.reload();
     }
   }

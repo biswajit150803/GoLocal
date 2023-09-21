@@ -77,7 +77,7 @@ function CatMap(props) {
         console.log("checkkk" + props.category);
         const options = {
           method: "GET",
-          url: "https://hawkerhut-back.onrender.com/api/pins/category",
+          url: "https://evendorbackend.onrender.com/api/pins/category",
           params: { Category: props.category },
         };
         axios
@@ -210,7 +210,7 @@ function CatMap(props) {
 
       
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/order",
+          "https://evendorbackend.onrender.com/api/web3/order",
           data
         );
         console.log(

@@ -22,7 +22,7 @@ const Admin = (props) => {
   const apicustomer = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/admin",
+      url: "https://evendorbackend.onrender.com/api/web3/admin",
     };
     await axios
       .request(options)
@@ -41,7 +41,7 @@ const Admin = (props) => {
   const getHawkers = async () => {
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/users/admin",
+      url: "https://evendorbackend.onrender.com/api/users/admin",
     };
     await axios
       .request(options)
@@ -125,7 +125,7 @@ const Admin = (props) => {
     // e.preventDefault();
     const options = {
       method: "POST",
-      url: "https://hawkerhut-back.onrender.com/api/users/block",
+      url: "https://evendorbackend.onrender.com/api/users/block",
       data: {
         username: id,
       },

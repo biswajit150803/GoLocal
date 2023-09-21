@@ -122,7 +122,7 @@ const CCurrentorders = (props) => {
         alert("Enter a valid phone no");
       } else {
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/order",
+          "https://evendorbackend.onrender.com/api/web3/order",
           data
         );
         console.log(
@@ -143,7 +143,7 @@ const CCurrentorders = (props) => {
     const { contract } = state;
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/customer",
+      url: "https://evendorbackend.onrender.com/api/web3/customer",
       params: { CUser: customer },
     };
     axios
@@ -162,7 +162,7 @@ const CCurrentorders = (props) => {
     const { contract } = state;
     const options = {
       method: "GET",
-      url: "https://hawkerhut-back.onrender.com/api/web3/customerdone",
+      url: "https://evendorbackend.onrender.com/api/web3/customerdone",
       params: { CUser: customer },
     };
     axios
@@ -210,7 +210,7 @@ const CCurrentorders = (props) => {
         ////////////////////////////////////////////////////
         console.log(data);
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/customerdeny",
+          "https://evendorbackend.onrender.com/api/web3/customerdeny",
           data
         );
         window.location.reload();
@@ -259,7 +259,7 @@ const CCurrentorders = (props) => {
         ////////////WEB3 PARTIAL PAYMENT FUNCTION/////////////////////
         ////////////////////////////////////////////////////
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
+          "https://evendorbackend.onrender.com/api/web3/customeraccept",
           data
         );
         window.location.reload();
@@ -301,7 +301,7 @@ const CCurrentorders = (props) => {
         /////////////////////web3 full payment function//////////////////////
         ////////////////////////////////////////
         await axios.post(
-          "https://hawkerhut-back.onrender.com/api/web3/customeraccept",
+          "https://evendorbackend.onrender.com/api/web3/customeraccept",
           data
         );
         window.location.reload();
