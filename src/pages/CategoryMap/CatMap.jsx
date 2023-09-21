@@ -33,8 +33,8 @@ function CatMap(props) {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
   const [viewport, setViewport] = useState({
-    latitude: 47.040182,
-    longitude: 17.071727,
+    latitude: 22.53361232958243,
+    longitude: 88.34676105160081,
     zoom: 10,
   });
   //   const [showRegister, setShowRegister] = useState(false);
@@ -53,8 +53,8 @@ function CatMap(props) {
     });
   };
   const [per, Sper] = useState({
-    lat: 47.040182,
-    long: 17.071727,
+    lat: 22.53361232958243,
+    long: 88.34676105160081,
   });
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {

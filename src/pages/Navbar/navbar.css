@@ -42,9 +42,9 @@ body {
 }
 
 
-.menu-icon {
+.menu-icon1 {
   display: none;
-  color:#000000;
+  color:teal !important;
   width: 15vh;
 }
 .nav-sticky{
@@ -103,14 +103,14 @@ a:hover{
     position: relative;
     z-index: 1;
   }
-  .menu-icon {
+  .menu-icon1 {
     display: inline-block;
     cursor: pointer;
     padding: 0 !important;
     margin-right: -12vw;
     font-size: 4vw;
   }
-  .menu-icon {
+  .menu-icon1 {
     display: inline-block;
     cursor: pointer;
     padding: 0 !important;

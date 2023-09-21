@@ -20,7 +20,7 @@ const Navbar = () => {
         <img className='logN' src="./Logo.png" alt="Stopby_logo" />
         </NavLink>
         </div>
-        <div className="menu-icon" onClick={handleShowNavbar}>
+        <div className="menu-icon1" onClick={handleShowNavbar}>
           <BsFillHddStackFill />
         </div>
         <div className={`nav-elements1  ${showNavbar && 'active'}`}>
