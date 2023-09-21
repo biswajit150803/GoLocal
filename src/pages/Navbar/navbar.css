@@ -91,7 +91,22 @@ a:hover{
   background-color: #c55b1d;
 }
 
+
+
 @media (max-width: 1000px) {
+  .nav-elements1 {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 100;
+    position: fixed;
+    background-color: #f8f4ea;
+    /* background-image: url(https://www.transparenttextures.com/patterns/debut-light.png); */
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+}
   .nav-elements1{
     margin-top: 8vw;
   }
@@ -122,17 +137,7 @@ a:hover{
     position: relative;
   }
 
-  .nav-elements1 {
-    position: absolute;
-    right: 0;
-    top: 60px;
-    background-color: #20262E;
-    /* background-image: url("https://www.transparenttextures.com/patterns/debut-light.png"); */
-    width: 0px;
-    height: calc(100vh - 60px);
-    transition: all 0.3s ease-in;
-    overflow: hidden;
-  }
+  
 
   .nav-elements1.active {
     width: 270px;
